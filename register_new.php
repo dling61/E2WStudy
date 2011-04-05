@@ -14,7 +14,7 @@
 	if(isset($_SESSION['user_id'])){
 		//echo '<p>You have been loggined, where do you go? </p>';
 		//echo "<meta   http-equiv='refresh'content=2;URL='StudentProfile.php'>";
-		Header("Location:FrontPage.php");
+		Header("Location:main.php");
 		//echo '<p><a href="FrontPage.php">Home Page</p>';
 		//exit();
 		//echo "<meta   http-equiv='refresh'content=1;URL='StudentProfile.php'>";

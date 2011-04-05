@@ -23,6 +23,8 @@
 	 $myIndex = 0;
 	 // total price 
 	 $myTotal = 0;
+	 // transaction Id
+	 $txns = rand();
 	 
 	// calculate the prices of each service selection
 	// TBD --- build some disaccounts here. e.g. 10 percent off for second or more services
@@ -108,11 +110,12 @@
 	
 // this is to construct a http request to paypal
 	function paypal() {
-		global $myOrder, $total_basic_count, $total_comp_count, $myIndex;
+		global $myOrder, $total_basic_count, $total_comp_count, $myIndex, $txns;
 	    // fixed values
 		echo '<input type="hidden" name="cmd" value="_cart">';
 		echo '<input type="hidden" name="upload" value="1">';
 		echo '<input type="hidden" name="business" value="dling7_1296533755_biz@hotmail.com">';
+		
 		//  dynamically generate items
 		$inumber = 1;
 		for ($row = 0; $row < $myIndex; $row++) {
@@ -127,14 +130,15 @@
 			echo "<input type=hidden name=$item_amount value='{$myOrder[$row][4]}'>";
 			++$inumber;
 		}
-		//echo '<input type="hidden" name="item_name_2" value="Item Name 2">';
-		//echo '<input type="hidden" name="amount_2" value="2.00">';
+		
+		// pass the transaction ID to paypal
+		echo "<input type=hidden name=custom value='{$txns}'>";
 		
 		// fixed values
 		echo '<input type="hidden" name="currency_code" value="USD">';
 		echo '<input type="hidden" name="shipping" value="2">';
 		echo '<input type="hidden" name="return" value="http://www.e2wstudy.com/buy/confirmation.php">'; 
-		// TBD: Which page to return to??
+		// TBD: Which cancel page to return to??
 		echo '<input type="hidden" name="cancel_return" value="http://www.e2wstudy.com/buy/PDTReturn.php">';  
 	
 	}

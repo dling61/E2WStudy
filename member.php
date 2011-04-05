@@ -31,13 +31,16 @@
 	
 	//check invadlid user if failed redirect to login.php
 	check_valid_user();
-	
+
 	if ($_SESSION['usertype'] == "teacher") {
 		header ('Location:editoroverview.php') ; 
 	}
-	else
-	{
-	  header ('Location:studentoverview.php') ; 
+	else if ($_SESSION['usertype'] == "student") {
+		header ('Location:studentoverview.php') ; 
+	}
+	else if ($_SESSION['usertype'] == "admin") {
+		// admin user
+		header ('Location:./admin/admin_main.php') ; 
 	}
 	     
 ?>
