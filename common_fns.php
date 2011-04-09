@@ -121,4 +121,10 @@ function validEmail($email)
 	setcookie('usertype', $_SESSION['usertype'], time() + (60 * 60 * 24 ));  // expires in one day
  
  }
+ 
+ function set_common_top()
+ // a common code for all registered users
+ {
+ 
+ }
 ?>

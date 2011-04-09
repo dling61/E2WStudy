@@ -18,4 +18,31 @@
     echo  '<li><a href="SAT.php">The SAT I and SAT II</a></li>';
     echo  '<li><a href="College.php">College Rankings and Information</a></li>';
  }
+ 
+ function header_portion($title) {
+ 
+	 echo '<html xmlns="http://www.w3.org/1999/xhtml">';
+	 echo '<head>';
+	 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+	 echo '<title>$title</title>';
+	 echo '<link href="style.css" rel="stylesheet" type="text/css" />';
+	 echo '</head>';
+ 
+ }
+ 
+ function footer_portion() {
+ 
+	 echo '<div id="foot">';
+	 echo ' <div id="footer">';
+	 echo '  <div id="copyright">';
+	 echo '    <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />';
+	 echo '      Copyright &amp;copy 2011 E2Wstudy.com LLC<br />';
+	 echo '      All rights reserved. </p>';
+	 echo '  </div>';
+	 echo ' </div>';
+	 echo '</div>';
+ 
+ 
+ }
+ 
 ?>

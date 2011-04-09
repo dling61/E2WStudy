@@ -50,13 +50,27 @@ a:hover {
 	color: #FFF;
 	float: right;
 	height: 25px;
-	width: 400px;
+	width: 480px;
 	text-align: right;
 	margin-top: 70px;
 	padding-right: 50px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-weight: bold;
 }
+#usename2 {
+	font-size: 14px;
+	line-height: 25px;
+	color: #FFF;
+	float: right;
+	height: 25px;
+	width: 480px;
+	text-align: right;
+	margin-top: 70px;
+	padding-right: 50px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+}
+
 #terms {
 }
 #ftop {
@@ -151,6 +165,7 @@ a:hover {
 /*maincontect*/
 #maincontect {
 	width: 955px;
+
  background: #FFF height: 100%;
 	border-right: 1px solid #E9E9E9;
 	border-left: 1px solid #E9E9E9;
@@ -196,7 +211,7 @@ a:hover {
 }
 #mainSampE {
 	float: right;
-	height: 2200px;
+	height: auto;
 	width: 784px;
 	border-left: 1px solid #ccc;
 }
@@ -252,10 +267,17 @@ a:hover {
 
 #main {
 	float: right;
-	height: 465px;
+	height: auto;
 	width: 784px;
 	border-left: 1px solid #CCC;
 }
+#main2 {
+	float: right;
+	height: auto;
+	width: 733px;
+	border-left: 1px solid #CCC;
+}
+
 #mcontect {
 	float: left;
 	height: auto;
@@ -263,6 +285,14 @@ a:hover {
 	margin-top: 5px;
 	margin-left: 2px;
 }
+#mcontect2 {
+	float: left;
+	height: auto;
+	width: 730px;
+	margin-top: 5px;
+	margin-left: 2px;
+}
+
 #mainau {
 	float: right;
 	height: 465px;
@@ -282,6 +312,14 @@ a:hover {
 	margin-left: 50px;
 	height: auto;
 }
+#profile2 {
+	float: left;
+	width: 650px;
+	margin-top: 10px;
+	margin-left: 50px;
+	height: auto;
+}
+
 /*leftnav*/
 
 #leftnav {
@@ -340,52 +378,105 @@ a:hover {
 	color:#fff;
 	text-decoration:none;
 }
-#leftnav li ul {
-	list-style:none;
-	margin: 0px;
-	padding: 0px;
-}
-#leftnav li ul li {
-	background: #ffffff;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 12px;
-}
-/*
-#leftnav li ul li{    
- background: #ebebeb;   
-}   
-*/
- 
-#leftnav li ul a {
-	padding-left:10px;
-	width:160px;
-}
-#leftnav li ul a:link {
-	color:#666;
-	text-decoration:none;
-}
-#leftnav li ul a:visited {
-	color:#666;
-	text-decoration:none;
-}
-#leftnav li ul a:hover {
-	color:#f3f3f3;
-	text-decoration:none;
-	font-weight:normal;
-	background:#828282;
-}
-#leftnav li:hover ul {
-	left: auto;
-}
-#leftnav li.sfhover ul {
-	left: auto;
-}
 #content {
 	clear: left;
 }
-#leftnav ul.collapsed {
-	display: none;
+
+
+/*leftitem*/
+
+#leftitem {
+	float: left;
+	width: 220px;
+	height: 465px;
+	list-style: none;
 }
+#leftitem h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #000;
+	height: 30px;
+	width: 220px;
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	border-bottom: 1px solid #999;
+}
+#leftitem a {
+	width: 210px;
+	display: block;
+	padding:0px 0 0px 10px;
+}
+
+#leftitem li {
+	border-bottom:1px solid #e1e8ff;
+	float:left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	margin-top: 0px;
+	line-height: 30px;
+}
+#leftitem li a:hover {
+	background:#828282;
+}
+#leftitem a:link {
+	color:#333;
+	text-decoration:none;
+}
+#contactitem a:link {
+	color:#333;
+	text-decoration:none;
+}
+
+#leftitem a:visited {
+	color:#333;
+	text-decoration:none;
+}
+#leftitem a:hover {
+	color:#fff;
+	text-decoration:none;
+}
+
+/*contactitem*/
+
+#contactitem {
+	float: left;
+	width: 220px;
+	height: auto;
+	list-style: none;
+}
+#contactitem a {
+	width: 210px;
+	display: block;
+	padding:0px 0 0px 10px;
+}
+#contactitem h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #000;
+	height: 30px;
+	width: 220px;
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	border-bottom: 1px solid #999;
+}
+
+#contactitem li {
+	border-bottom:1px solid #e1e8ff;
+	float:left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	margin-top: 0px;
+	line-height: 30px;
+	width: 220px;
+	text-align: center;
+}
+
 /*footer*/
 /*#foot {
 	height: 65px;
@@ -438,6 +529,19 @@ a:hover {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+.hname12 {
+	font-size: 13px;
+	color: #000;
+}
+.hname13 {
+	font-size: 16px;
+	color: #FFF;
+	background-color: #9A1123;
+	display: block;
+	font-weight: bold;
+}
+
+
 .hname2 {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 12px;
@@ -559,6 +663,22 @@ a:hover {
 	height:50px;
 	font-size: 14px;
 }
+.commentarea {
+	border:1px solid #333;
+	overflow:auto;
+	width:250px;
+	height:50px;
+	font-size: 14px;
+}
+.commentarea2 {
+	border:1px solid #333;
+	overflow:auto;
+	width:300px;
+	height:80px;
+	font-size: 14px;
+}
+
+
 .aeraname {
 	color: #666;
 	padding-top: 15px;
@@ -567,6 +687,7 @@ a:hover {
 .aeraborder2 {
 	padding-bottom: 10px;
 }
+
 .texttitle {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 18px;
@@ -820,7 +941,6 @@ a:hover {
 #signupheader {
 	height: 70px;
 	width: 650px;
-	background: url(images/Register%20bgi.gif);
 	float: left;
 	margin-bottom: 30px;
 }
@@ -851,6 +971,18 @@ a:hover {
 	margin-left: auto;
 	margin-top: 255px;
 }
+#signcpright2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 9px;
+	color: #333;
+	height: 40px;
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+	float: left;
+}
+
 .signaera {
 	height: 24px;
 	width: 300px;
@@ -1083,7 +1215,7 @@ a:hover {
 	height: 135px;
 }
 #followfiled {
-	height: 1150px;
+	height: 1100px;
 }
 #login {
 	height: 250px;
@@ -1093,6 +1225,24 @@ a:hover {
 	margin-right: auto;
 	margin-left: auto;
 }
+#login2 {
+	height: 260px;
+	width: 550px;
+	border: 1px solid #900;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#login3 {
+	height: 200px;
+	width: 550px;
+	border: 1px solid #900;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 #loginleft {
 	float: left;
 	width: 249px;
@@ -1105,6 +1255,7 @@ a:hover {
 	height: 250px;
 	width: 550px;
 }
+
 #loginlefttop {
 	height: 80px;
 	width: 249px;
@@ -1136,6 +1287,8 @@ a:hover {
 	height: 30px;
 	margin-top: 5px;
 	padding-left: 160px;
+	float: left;
+	width: 350px;
 }
 #logintitle {
 	height: 65px;
@@ -1143,21 +1296,64 @@ a:hover {
 	text-align: right;
 	border-bottom: 1px solid #CCC;
 }
+#contactsub {
+	float: left;
+	height: auto;
+	width: 650px;
+	margin-left: 50px;
+	padding-bottom: 20px;
+}
 .loginaera {
 	height: 24px;
 	width: 250px;
 	border: 1px solid #333;
 }
-#loginaera {
-	height: 80px;
-	margin-top: 20px;
+.loginaera2 {
+	height: 24px;
+	width: 300px;
+	border: 1px solid #333;
 }
+
+#loginaera {
+	height: auto;
+	margin-top: 20px;
+	float: left;
+}
+#loginaera2 {
+	height: auto;
+	margin-top: 20px;
+	float: left;
+}
+#loginaera3 {
+	height: auto;
+	margin-top: 20px;
+	float: left;
+	padding-bottom: 20px;
+	width: auto;
+}
+
+
 #loginline {
 	height: 40px;
 	width: 400px;
 	float: left;
 	margin-left: 50px;
 }
+#loginline2 {
+	height: 40px;
+	width: 480px;
+	float: left;
+	margin-left: 50px;
+}
+#loginline3 {
+	height: auto;
+	width: 550px;
+	float: left;
+	margin-left: 50px;
+}
+
+
+
 #loginname {
 	height: 30px;
 	width: 100px;
@@ -1167,6 +1363,16 @@ a:hover {
 	font-size: 14px;
 	line-height: 30px;
 }
+#loginname2 {
+	height: 30px;
+	width: 140px;
+	float: left;
+	margin-top: 5px;
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
 #loginbuttom {
 	height: 35px;
 	margin-top: 5px;
@@ -1174,13 +1380,46 @@ a:hover {
 	font-size: 16px;
 	line-height: 24px;
 	color: #333;
+	float: left;
+	width: 500px;
 }
+#loginbuttom2 {
+	height: 35px;
+	margin-top: 5px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333;
+	float: left;
+	width: 500px;
+}
+#loginbuttom3 {
+	height: 35px;
+	margin-top: 30px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333;
+	float: left;
+	width: 500px;
+	margin-left: 50px;
+}
+
+
 #loginput {
 	float: right;
 	height: 30px;
 	margin-top: 5px;
 	width: 290px;
 }
+
+#loginput2 {
+	float: left;
+	height: 30px;
+	margin-top: 5px;
+	width: 400px;
+}
+
 #loginbuttomimg {
 	color: #FFF;
 	height: 24px;
@@ -1191,6 +1430,17 @@ a:hover {
 	font-size: 18px;
 	text-align: center;
 }
+#loginbuttomimg2 {
+	color: #FFF;
+	height: 24px;
+	width: auto;
+	margin-top: 5px;
+	margin-left: 160px;
+	line-height: 24px;
+	font-size: 18px;
+	text-align: center;
+}
+
 .terms {
 	color: #039;
 }

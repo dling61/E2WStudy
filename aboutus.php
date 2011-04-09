@@ -43,19 +43,32 @@ function DoMenu(emid){
 </div>
 <div class="clearfloat"></div>
 <div id="maincontect">
-  <div id="leftnav">
+  <div id="leftitem">
     <h1>ABOUT US</h1>
+	<li><a href="aboutus.php">Company</a></li>
+    <li><a href="PrivacyTerms.php">Privacy & Terms of use</a></li>
   </div>
-  <div id="main">
-    <div id="mcontect">
+  <div id="main2">
+    <div id="mcontect2">
       <div id="profile">
         <h2 class="hname2"></h2>
-        <h1 class="texttitle">ABOUT US</h1>
+        <h1 class="texttitle">ABOUT  US</h1>
         <p>&nbsp;</p>
         <p class="intrutext"><strong>E2WSTUDY, LLC (U.S.A.) </strong>is based on San Jose, Silicon Valley, U.S.A. was created by some entrepreneurs in information technology and Harvard graduates in 2010. Its goal is to help Chinese international students prepare their college application to get into the best US colleges. </p>
         <p class="intrutext">The founders of this company have experience with the academic environment in both China and America. They have a deep understanding of both educational systems and know how to bridge the gap. Our team members come from top Ivy League Universities and have a Chinese-American background, allowing them to relate to our customers on a personal level.  They have advised many Chinese students on the college admission process, all of whom have been admitted to their choice US college. </p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
+        <p >&nbsp;</p>
       </div>
-    </div>
+   </div>
   </div>
   <div class="clearfloat"></div>
 </div>
@@ -70,3 +83,4 @@ function DoMenu(emid){
 </div>
 </body>
 </html>
+

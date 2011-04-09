@@ -9,7 +9,7 @@
 <body>
 <form method="post" action="register_new.php">
   <div id="signborder">
-  <div id="signupheader">&nbsp;</div>
+  <div id="signupheader"><a href="main.php"><image src="images/Register%20bgi.gif" /></a></div>
   <div id="signin">
 	 <div id="userc"> <strong>User Type:</strong> &nbsp; 
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -17,7 +17,7 @@
       <label for="Editor" >Editor</label>
      &nbsp; 
      &nbsp;
-     <input type="radio" name="usertype" id="Student"  value="student"/>
+     <input type="radio" name="usertype" id="Student"  value="student" Checked />
       <label for="Student">Student</label>
     </div>
     <div id="signnav">
@@ -68,12 +68,8 @@
          <div id="signaera"><input type="text" class="signaera"/ name="phonenumber"></div>
       </div> 
     </div>
-    <div id="terms">By Submitting this form,you are agreeing to the <a href="#" >terms of service. </a></div>
-    <div id="signbuttomin"><a href="javascript:loginform.submit();"><input type="image" value="login" name="submit" src="images/Register.gif" width="105" height="30" /></a></div>
-    <!--
-	<input type="submit" value="Sign Up" name="submit"/><input type="button" value="Cancel" onClick="window.location='login.php'"/>
-	<input type="image" value="Sign Up" name="submit" src="images/Register.gif" width="105" height="30" />
-	-->
+    <div id="terms">By Submitting this form,you are agreeing to the <a href="main.php" color="#039"> terms of service. </a></div>
+    <div id="signbuttomin"><input type="image" value="login" name="submit" src="images/Register.gif" width="105" height="30" /></a></div>
   </div>    
 </div>
 <div id="signcpright">Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy.com LLC All rights reserved

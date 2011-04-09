@@ -30,8 +30,8 @@ function DoMenu(emid){
   <div id="header">
     <div id="signup">
       <ul>
-        <li><a href="register_form.html">SIGNUP</a></li>
-        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="register_form.php">SIGNUP</a></li>
+        <li><a href="login.php">LOGIN</a></li>
       </ul>
     </div>
     <div id="topnav">

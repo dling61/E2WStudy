@@ -74,10 +74,10 @@ function DoMenu(emid){
           <p class="Essaytext">&nbsp;</p>
         </ul>
         <div>
+		  <h2 class="hname7">After:</h2>
 		  <object type="application/pdf" data="Sample_essay_Edited.pdf" width="100%" height="90%">
              <a href="Sample_essay_Edited.pdf">After</a>
           </object>
-	
         </div>
       </div>
     </div>
