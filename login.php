@@ -1,3 +1,7 @@
+<?php
+	require_once('common_fns_main.php');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,13 +18,13 @@
     </div>
     <div id="loginaera">
       <div id="loginline">
-        <div id="loginname">Username: </div>
+        <div id="loginname">Email: &#42</div>
         <div id="loginput">
           <input type="text" class="loginaera" name="email" />
         </div>
       </div>
       <div id="loginline">
-        <div id="loginname">Password: </div>
+        <div id="loginname">Password: &#42</div>
         <div id="loginput">
           <input type="password" class="loginaera" name="password" />
         </div>
@@ -31,7 +35,7 @@
     </div>
     <div id="loginforgot"><a href="forgotpw.php" class="linktext">Forgot your password?</a></div>
   </div>
-  <div id="signcpright">Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy.com LLC All rights reserved </div>
+  <?php copyright_portion(); ?>
 </div>
 </body>
 </html>

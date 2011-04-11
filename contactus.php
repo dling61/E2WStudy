@@ -33,6 +33,9 @@
 			
 			header('Location: main.php');
 		}
+		else {
+			$error_msg.="Please try again. <br />";
+		}
 		
 	}
 ?>
@@ -109,18 +112,18 @@ function DoMenu(emid){
           <p class="hname7"><strong>Contact E2WSTUDY</strong></p>
           <p class="hname12">Please fill out the form below and a E2WSTUDY representative will contact you as soon as possible.
             For immediate assistance,please contact our customer support.</p>
-		  <p><?php echo "<br />"; echo '<font COLOR="#FF0000">' . $error_msg . ' please try again' . '</font>'; ?></p>
+		  <p><?php if ($error_msg !='') { echo "<br />"; echo '<font COLOR="#FF0000">' . $error_msg . '</font>'; } ?></p>
         </div>
 		<form method="POST" action="" name="form1">
         <div id="loginaera3">
           <div id="loginline3">
-            <div id="loginname"><strong>Name: *</strong>: </div>
+            <div id="loginname"><strong>Name: &#42 </strong></div>
             <div id="loginput2">
               <input type="text" name="username" class="loginaera2"/>
             </div>
           </div>
           <div id="loginline3">
-            <div id="loginname"><strong>Email: *</strong></div>
+            <div id="loginname"><strong>Email: &#42</strong></div>
             <div id="loginput2">
               <input type="text" name="email" class="loginaera2"/>
             </div>
@@ -132,7 +135,7 @@ function DoMenu(emid){
             </div>
           </div>
           <div id="loginline3">
-            <div id="loginname"><strong>Comment: *</strong></div>
+            <div id="loginname"><strong>Comment: &#42</strong></div>
             <div id="loginput2">
               <p class="aeraborder2">
                 <textarea class="commentarea2" name="comment" id="textarea1" cols="45" rows="5"></textarea>

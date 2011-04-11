@@ -918,9 +918,9 @@ a:hover {
 	color: #000;
 	float: left;
 	height: 30px;
-	width: 130px;
+	width: 150px;
 	margin-top: 10px;
-	margin-left: 65px;
+	margin-left: 45px;
 }
 #terms {
 	font-family: Verdana, Geneva, sans-serif;
@@ -1420,6 +1420,14 @@ a:hover {
 	width: 400px;
 }
 
+#loginput3 {
+	float: left;
+	height: 30px;
+	margin-top: 5px;
+	width: 290px;
+}
+
+
 #loginbuttomimg {
 	color: #FFF;
 	height: 24px;
@@ -1483,5 +1491,11 @@ a:hover {
 	float: left;
 	font-size: 12px;
 	width: 650px;
-	padding-left: 65px;
+	padding-left: 45px;
+}
+#pdftable {
+	float: left;
+	height: 650px;
+	width: 680px;
+	padding-bottom: 50px;
 }

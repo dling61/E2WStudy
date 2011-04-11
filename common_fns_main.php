@@ -45,4 +45,22 @@
  
  }
  
+ function copyright_portion() {
+ 
+	echo '<div id="signcpright">';
+	echo 'Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy, LLC U.S.A All rights reserved';
+	echo '</div>';
+ 
+ }
+  
+ function copyright_portion_background() {
+ 
+	echo '<div id="copyright">';
+    echo ' <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />';
+    echo '   Copyright &amp;copy 2011 E2Wstudy.com LLC<br />';
+    echo '    All rights reserved. </p>';
+    echo '</div>';
+ 
+ }
+ 
 ?>
