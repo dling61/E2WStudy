@@ -1,15 +1,16 @@
 
 <?php
 
+	require_once('../constants.php');
+	require_once('../common_fns.php');
+	require_once('../common_fns_payment.php');
 	// this is to chnage the status of service selection to "checkout" so that we can assign it to editor
 	function status_update($custom) {
 	
-	require_once('common.php');
-
 	$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 		
-	$service_status = "checkout";
-	$query1 = "select service_selection_id ssid, service_status sstatus from service_selection where transaction_id ='$custom'";
+	$service_status = "paid";
+	$query1 = "select service_selection_id ssid, service_status sstatus from service_selection where transaction_id ='$custom' and service_status = 'checkout'";
 	$data1 = mysqli_query($dbc,$query1)or die(mysqli_error());
 	$num1 = mysqli_num_rows($data1);
 	

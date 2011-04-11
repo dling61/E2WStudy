@@ -32,7 +32,7 @@
 		
 		for ($row = 0; $row < $myIndex; $row++) {
 		    $ssid = $myOrder[$row][3];
-			$query = "update service_selection set transaction_id = '$txns', last_update_datetime = Now() where service_selection_id = '$ssid'";
+			$query = "update service_selection set transaction_id = '$txns', service_status = 'checkout', last_update_datetime = Now() where service_selection_id = '$ssid'";
 			
 			$data = mysqli_query($dbc,$query)or die(mysqli_error());
 
