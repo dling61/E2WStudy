@@ -3,6 +3,7 @@
 
   require_once('constants.php');
   require_once('common_fns.php');
+  require_once('common_fns_main.php');
   
   session_start();
   
@@ -19,7 +20,8 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">  
 <!--   
-var LastLeftID = "";   
+var LastLeftID = "";  
+var file_selected = false; 
   
 function DoMenu(emid){   
     var obj = document.getElementById(emid);    
@@ -41,13 +43,62 @@ function check(){
 	}
 }
 
+function checkForm() {
+
+	if (document.smform.essayname.value == '')
+	{
+		// something is wrong
+		alert('Essay name is needed');
+		return false;
+	}
+	else if (document.smform.essayquestion.value == '')
+	{
+		// something else is wrong
+		alert('Essay Question is needed');
+		return false;
+	}
+	else if (document.smform.wordcount.value == '')
+	{
+		// something else is wrong
+		alert('Word Count Number is needed');
+		return false;
+	}
+	else if(!file_selected) 
+	{
+		alert('No file selected!');
+		return false;
+	}
+	else // check if the word account is numeric
+	{
+		var strValidChars = "0123456789";
+		var strChar;
+        var blnResult = true;
+
+		strString = document.smform.wordcount.value;
+        //  test strString consists of valid characters listed above
+		for (i = 0; i < strString.length && blnResult == true; i++)
+		{
+			strChar = strString.charAt(i);
+			if (strValidChars.indexOf(strChar) == -1)
+			{
+				alert('Word Count has to be number, e.g. 234');
+				blnResult = false;
+				return false;
+			}
+		}
+	}
+	
+	return true;
+
+}
+
 </script>
 </head>
 
 <body>
 <div id="ftop">
   <div id="header">
-    <div id="usename">Welcome to&nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.php"><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
+    <div id="usename">Welcome  &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.php"><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
   </div>
 </div>
 <div class="clearfloat"></div>
@@ -64,12 +115,12 @@ function check(){
     <div id="mcontect">
       <div id="step">
         <ul>
-          <li><a href="submitessay1.php">1 Submit Essay</a></li>
-          <li><a href="submitessay2.php">2 Review Order and Pay </a></li>
-          <li><a href="confirmation.php">3 Confirmation</a></li>
+          <li><a style="background-color:red">1 Submit Essay</a></li>
+          <li><a>2 Review Order and Pay </a></li>
+          <li><a>3 Confirmation</a></li>
         </ul>
       </div>
-	  <form name="smform" enctype="multipart/form-data" method="post" action="addessay.php">
+	  <form name="smform" enctype="multipart/form-data" method="post" action="addessay.php" onSubmit="return checkForm()">
       <input type="hidden" name="MAX_FILE_SIZE" value="32768" />
 	  <div id="profile">
         <div id="Selection">
@@ -92,28 +143,28 @@ function check(){
         <div id="selected">
           <h2 class="hname5"><span id="servicetype">Comprehensive</span> </h2>
           <div id="PackageSelection">
-            <p class="hname8" >1.Essay Name(include the name of the college here): </p>
+            <p class="hname8" >1. &#42 Essay Name(include the name of the college here): </p>
             <p class="aeraborder2">
               <input class="signaera" name="essayname" id="essayname" />
             </p>
           </div>
           <div id="PackageSelection">
-            <p class="hname8" >2.Essay Prompt/Question</p>
+            <p class="hname8" >2. &#42 Essay Prompt/Question</p>
             <p class="aeraborder2">
               <textarea class="area" name="essayquestion" id="textarea2" cols="45" rows="5"></textarea>
             </p>
           </div>
           <div id="PackageSelection">
-            <p class="hname8" >3.Required word count: </p>
+            <p class="hname8" >3. &#42 Required word count: </p>
             <p class="aeraborder2">
               <input class="signaera" name="wordcount" id="wordcount" />
             </p>
           </div>
           <div id="current3">
-            <p class="hname8" >4.Option: Upload  your essay.<em>Microsoft Word files or text files are accepted (.doc /.txt)</em></p>
+            <p class="hname8" >4. &#42 Upload  your essay. <em>Microsoft Word files or text files are accepted (.doc /.txt)</em></p>
             <div id="browseaera">
               <div id="browseaera2">
-                <input name="uploadfile" type="file" class="text1" id="uploadfile" />
+                <input name="uploadfile" type="file" class="text1" id="uploadfile" onchange="file_selected = true;" />
 				<!--
 				<input type="hidden" name="MAX_FILE_SIZE" value="327680000" />
 				-->
@@ -142,11 +193,7 @@ function check(){
 <div class="clearfloat"></div>
 <div id="foot">
   <div id="footer">
-    <div id="copyright">
-      <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-        Copyright &amp;copy 2011 E2Wstudy.com LLC<br />
-        All rights reserved. </p>
-    </div>
+	<?php copyright_portion_background(); ?>
   </div>
 </div>
 </body>

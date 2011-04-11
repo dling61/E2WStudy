@@ -148,8 +148,8 @@ function DoMenu(emid){
           <ul class="ulprofile">
             <h2 class="hname4">Basic Information(required) </h2>
             <p class="hname1"><strong>Name:</strong><?php echo $_SESSION['firstname']; ?><br />
-              <strong>Email:</strong><?php echo $_SESSION['firstname']; ?><br />
-              <strong>Phone: </strong>Prepopulate<br />
+              <strong>Email:</strong><?php echo $_SESSION['email']; ?><br />
+              <strong>Phone: </strong><?php echo $_SESSION['phone']; ?><br />
             </p>
           </ul>
         </div>

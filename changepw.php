@@ -112,19 +112,19 @@ function DoMenu(emid){
     <div id="loginaera2">
       <div id="loginline2">
         <div id="loginname2">Old Password: </div>
-        <div id="loginput2">
+        <div id="loginput3">
           <input type="password" name="oldpw" class="loginaera"/>
         </div>
       </div>
       <div id="loginline2">
         <div id="loginname2"> New Password:  </div>
-        <div id="loginput2">
+        <div id="loginput3">
           <input type="password" name="newpw1" class="loginaera"/>
         </div>
       </div>
       <div id="loginline2">
         <div id="loginname2">Confirm Password: </div>
-        <div id="loginput2">
+        <div id="loginput3">
           <input type="password" name="newpw" class="loginaera"/>
         </div>
       </div>

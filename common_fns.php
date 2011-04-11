@@ -77,7 +77,7 @@ function validEmail($email)
       $user_username = $email;
       $user_password = $password;
 	  
-	  $query = "SELECT uid, first_name, user_type FROM users WHERE email_address = '$user_username' AND password = SHA('$user_password')";
+	  $query = "SELECT uid, first_name, user_type, phone_number FROM users WHERE email_address = '$user_username' AND password = SHA('$user_password')";
       $data = mysqli_query($dbc, $query);
 		
       if ( mysqli_num_rows($data)==1) {
@@ -86,6 +86,8 @@ function validEmail($email)
 		   $_SESSION['user_id'] = $row['uid'];
            $_SESSION['firstname'] = $row['first_name'];
 		   $_SESSION['usertype'] = $row['user_type'];
+		   $_SESSION['phone'] = $row['phone_number'];
+		   $_SESSION['phone'] = $user_username;
 		   $_SESSION['cart'] = array();
 		   //setcookie('user_id', $row['uid'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
            //setcookie('firstname', $row['first_name'], time() + (60 * 60 * 24 * 30));  // expires in 30 days

@@ -23,8 +23,6 @@
 	 $myIndex = 0;
 	 // total price 
 	 $myTotal = 0;
-	 // transaction Id
-	 $txns = rand();
 	 
 	// calculate the prices of each service selection
 	// TBD --- build some disaccounts here. e.g. 10 percent off for second or more services
@@ -105,6 +103,9 @@
 		}	
 		mysqli_close($dbc);
 		
+		// add these to the session 
+		$_SESSION['myOrder'] = $myOrder;
+		$_SESSION['myIndex'] = $myIndex;
 	}
 	
 	
@@ -114,7 +115,7 @@
 	    // fixed values
 		echo '<input type="hidden" name="cmd" value="_cart">';
 		echo '<input type="hidden" name="upload" value="1">';
-		echo '<input type="hidden" name="business" value="dling7_1296533755_biz@hotmail.com">';
+		echo '<input type="hidden" name="business" value="' . PAYPAL_BUSINESS_ACCOUNT . '">';
 		
 		//  dynamically generate items
 		$inumber = 1;
@@ -180,7 +181,7 @@ function DoMenu(emid){
 <body>
 <div id="ftop">
   <div id="header">
-    <div id="usename">Welcome to&nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.php"><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
+     <div id="usename">Welcome  &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.php"><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
   </div>
 </div>
 <div class="clearfloat"></div>
@@ -197,9 +198,9 @@ function DoMenu(emid){
     <div id="mcontect">
       <div id="step">
         <ul>
-          <li><a href="Submit Essay page_step_1.html">1 Submit Essay </a></li>
-          <li><a href="Submit Essay page_step_2.html">2 Review Order and Pay </a></li>
-          <li><a href="Confirmation.html">3  Confirmation</a></li>
+          <li><a>1 Submit Essay</a></li>
+          <li><a style="background-color:red">2 Review Order and Pay </a></li>
+          <li><a>3 Confirmation</a></li>
         </ul>
       </div>
       <div id="profile">
@@ -238,10 +239,13 @@ function DoMenu(emid){
         </div>
         <div id="paymentenunciation">** When you click on &quot;Pay&quot; button, you will be redirected to an online payment website. We don't store any sensitive information on our website. </div>
       </div>
-	  <!-- this is a URL address for paypal  -->
-	  <form action="'$PAYPAL_URL'" method="post">
-	  <!-- call the function to contruct hidden inputs  -->
+	  <!-- this is a URL address for paypal 
+	  <form action=<?php echo '"'. PAYPAL_WEB_URL . '"' ?> method="post">
+	  -->
+	  <form action="./buy/checkout.php" method="post">
+	  <!-- call the function to contruct hidden inputs 
 	  <?php paypal(); ?>
+	  -->
       <div id="payor"><a href="submitessay1.php"><img src="images/back01.gif" width="60" height="24" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" src="images/pay01.gif" name="submit" width="60" height="24" /></div>
 	  </form>
     </div>
