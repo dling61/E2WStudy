@@ -2,7 +2,6 @@
    require_once('common_fns_main.php');
 ?>
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -45,7 +44,7 @@ function DoMenu(emid){
 <div id="maincontect">
   <div id="leftnav">
     <h1>SERVICES</h1>
-    <li><a href="ServicesOverview.php">Overview</a></li>
+    <li><a href="servicesoverview.php">Overview</a></li>
 	<!--
     <li><a href="Useful Information.html">Useful Information</a></li>
 	-->
@@ -76,7 +75,7 @@ function DoMenu(emid){
         <div id="pdftable">
 		  <h2 class="hname7">After:</h2>
 		  <object type="application/pdf" data="Sample_essay_Edited.pdf" width="100%" height="90%">
-             <a href="Sample_essay_Edited.pdf">After</a>
+             <a href="Sample_Essay_Edited.pdf">After</a>
           </object>
         </div>
       </div>

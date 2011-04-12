@@ -109,7 +109,7 @@ function validEmail($email)
 	else
 	{
 	    // they are not login
-		echo 'You are not login in <br> />';
+		echo 'You are not login in <br>';
 		header("Location:login.php");
 		exit;
     }
@@ -121,7 +121,6 @@ function validEmail($email)
 	setcookie('user_id', $_SESSION['user_id'], time() + (60 * 60 * 24 ));    // expires in one day
     setcookie('firstname', $_SESSION['firstname'], time() + (60 * 60 * 24 ));  // expires in one day
 	setcookie('usertype', $_SESSION['usertype'], time() + (60 * 60 * 24 ));  // expires in one day
- 
  }
  
  function set_common_top()

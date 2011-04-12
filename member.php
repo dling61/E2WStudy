@@ -1,10 +1,6 @@
-
 <?php
-
    require_once('constants.php');
    require_once('common_fns.php');
-   
-   session_start();
    
    //create short variable name
    $email = $_POST['email'];

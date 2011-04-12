@@ -1,15 +1,11 @@
-ï»¿
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
-  require_once('common_fns_main.php');
-  
-  session_start();
-  
-  // ensure the user is logged
-  check_valid_user();
-  
+  require_once('config/appvars.php');
+  require_once('common_fns_student.php');
+  //check invadlid user and redirect it to login page
+  check_valid_user();	     
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -89,12 +85,9 @@ function checkForm() {
 	}
 	
 	return true;
-
 }
-
 </script>
 </head>
-
 <body>
 <div id="ftop">
   <div id="header">
@@ -105,11 +98,7 @@ function checkForm() {
 <div id="maincontect">
   <div id="leftnav">
     <h1>STUDENT</h1>
-    <li><a href="studentoverview.php">Overview</a> </li>
-    <li><a href="studentprofile.php">Profile</a></li>
-    <li><a href="submitessay1.php">Submit New Essay</a></li>
-    <li><a href="myessays.php">My Essays</a></li>
-    <li><a href="uinfo.php">Useful Information</a></li>
+    <<?php display_student_side_menu(); ?>
   </div>
   <div id="mainSubE1">
     <div id="mcontect">
@@ -130,14 +119,14 @@ function checkForm() {
               <input type="radio" name="selectop" id="Basic"  value="1" checked="checked" onClick="check()" />
               <label for="Basic">Basic</label>
             </h1>
-            <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;â€¢ Essay is edited twice by same editor<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;â€¢ Edited essay will be given back within 48 hours. </p>
+            <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;• Essay is edited twice by same editor<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;• Edited essay will be given back within 48 hours. </p>
             <h2 class="hname4">
               <input type="radio" name="selectop" id="Comprehensive"  value="2" checked="checked" onClick="check()" />
               <label for="Comprehensive">Comprehensive</label>
             </h2>
-            <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;â€¢ An editor will work with you on the essay from the beginning to the end.<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;â€¢ Unlimited email contact and two phone conversations with the editor. </p>
+            <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;• An editor will work with you on the essay from the beginning to the end.<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;• Unlimited email contact and two phone conversations with the editor. </p>
           </div>
         </div>
         <div id="selected">

@@ -1,19 +1,11 @@
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('common_fns_payment.php');
-  
-  session_start();
-  
   // ensure the user is logged
   check_valid_user();
-  
-?>
-
-<?php
-
-     //declare an array
+       //declare an array
 	 $myOrder = array();
 	 // the total number of basic services
 	 $total_basic_count=0;
@@ -27,7 +19,6 @@
 	// calculate the prices of each service selection
 	// TBD --- build some disaccounts here. e.g. 10 percent off for second or more services
     function calprice() {
-	
 	    global $myOrder, $total_basic_count, $total_comp_count, $myIndex;
 		for ($row = 0; $row < $myIndex; $row++)
 		{
@@ -58,7 +49,7 @@
 	function search(){ 
 		global $myOrder, $total_basic_count, $total_comp_count, $myIndex;
 	    // unset those
-	    $myOrder = array();
+	      $myOrder = array();
 		$total_basic_count = 0;
 		$total_comp_count = 0;
 		$myIndex = 0;
@@ -106,10 +97,8 @@
 		// add these to the session 
 		$_SESSION['myOrder'] = $myOrder;
 		$_SESSION['myIndex'] = $myIndex;
-	}
-	
-	
-// this is to construct a http request to paypal
+	}	
+     // this is to construct a http request to paypal
 	function paypal() {
 		global $myOrder, $total_basic_count, $total_comp_count, $myIndex, $txns;
 	    // fixed values
@@ -141,17 +130,13 @@
 		echo '<input type="hidden" name="return" value="http://www.e2wstudy.com/buy/confirmation.php">'; 
 		// TBD: Which cancel page to return to??
 		echo '<input type="hidden" name="cancel_return" value="http://www.e2wstudy.com/buy/PDTReturn.php">';  
-	
-	}
-	
+	}	
 ?>
-
 <?php
 	//call backend first
 	search();
 	
 	// May need to call calculation prices
-	
 	// set the cookies
 	set_cookies();
 ?>
@@ -177,7 +162,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
   <div id="header">

@@ -1,12 +1,10 @@
-
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
-   
-   session_start();
-	
-   //check invadlid user and redirect it to login page
+  require_once('common_fns_student.php');
+  
+  //check invadlid user and redirect it to login page
    check_valid_user();
 	     
 ?>
@@ -44,12 +42,7 @@ function DoMenu(emid){
 <div id="maincontect">
   <div id="leftnav">
     <h1>STUDENT</h1>
-    <li><a href="StudentOverview.php">Overview</a> </li>
-    <li><a href="StudentProfile.php">Profile</a></li>
-    <li><a href="SubmitEssay1.php">Submit New Essay</a></li>
-    <li><a href="MyEssays.php">My Essays</a></li>
-    <li><a href="/info/schoolinfo.html">Useful Information</a></li>
-    </li>
+    <?php display_student_side_menu(); ?>
   </div>
   <div id="mainStuO">
     <div id="mcontect">

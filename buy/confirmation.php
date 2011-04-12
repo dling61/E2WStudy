@@ -1,12 +1,8 @@
-
 <?php 
 	require_once('../common_fns_payment.php');
 ?>
-
-
 <?php
     // This is PDT return page and we need to process multiple items and amounts
-
 	// read the post from PayPal system and add 'cmd'
 	$req = 'cmd=_notify-synch';
 
@@ -17,7 +13,6 @@
 	$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
 
 	$req .= "&tx=$tx_token&at=$auth_token";
-
 
 	// post back to PayPal system to validate
 	$header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
@@ -88,14 +83,14 @@
 				// restore the session
 				$_SESSION['userid_id'] = $_COOKIE['user_id'];
 				$_SESSION['firstname'] = $_COOKIE['firstname'];
-				$_SESSION['usertype'] =  $_COOKIE['usertype']
+				$_SESSION['usertype'] =  $_COOKIE['usertype'];
 				// TBD need to set another two (email and phone)
 			  }
 			  else
 			  {
 				// not the same user. need to redirect the main page
-				header ('Location:main.php') ;
-			 }
+				header ('Location:main.php');
+			  }
 			}
 			else 
 			{
@@ -123,7 +118,6 @@
 	}
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -145,7 +139,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
   <div id="header">

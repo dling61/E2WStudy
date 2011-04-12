@@ -1,14 +1,11 @@
-
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
-  
-  session_start();
-  
+  require_once('common_fns_student.php');
+   
   // ensure the user is logged
   check_valid_user();
-  
 ?>
 
 <?php 
@@ -134,11 +131,7 @@ function DoMenu(emid){
 <div id="maincontect">
   <div id="leftnav">
     <h1>STUDENT</h1>
-    <li><a href="studentoverview.php">Overview</a> </li>
-    <li><a href="studentprofile.php">Profile</a></li>
-    <li><a href="submitessay1.php">Submit New Essay</a></li>
-    <li><a href="myessays.php">My Essays</a></li>
-    <li><a href="uinfo.php">Useful Information</a></li>
+    <?php display_student_side_menu(); ?>
   </div>
   <div id="mainStuP">
     <div id="mcontect">

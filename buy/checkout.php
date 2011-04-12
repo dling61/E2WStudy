@@ -1,23 +1,17 @@
-
 <?php
-
+  session_start();
   require_once('../constants.php');
   require_once('../common_fns.php');
   require_once('../common_fns_payment.php');
-  
-  session_start();
-  
   // ensure the user is logged
-  check_valid_user();
-  
+  check_valid_user(); 
 ?>
-
 <?php
-
     // transaction Id
 	$txns = rand();
 	
 	function checkout() {
+	    global $txns;
 		$myOrder = $_SESSION['myOrder'];
 		$myIndex = $_SESSION['myIndex'];
 		
@@ -39,7 +33,6 @@
 		}
 		mysqli_close($dbc);
 	}
-	
 	
 	function paypal() {
 	     global $txns;
@@ -89,5 +82,4 @@
 	checkout();
 	// redirect to paypal web site
 	paypal();
-
 ?>

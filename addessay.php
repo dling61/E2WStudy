@@ -1,14 +1,10 @@
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('config/appvars.php');
-  
-  session_start();
-  
   // ensure the user is logged
   check_valid_user();
-  
 ?>
 <?php
 
