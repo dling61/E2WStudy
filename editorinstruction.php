@@ -1,17 +1,12 @@
-﻿
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('common_fns_editor.php');
-   
-   session_start();
 	
-   //check invadlid user and redirect it to login page
-   check_valid_user();
-	     
+  //check invadlid user and redirect it to login page
+  check_valid_user();	     
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -58,7 +53,7 @@ function DoMenu(emid){
         <p class="hname1"><strong class="hname6">4.	Voice:</strong> Does the writer sound like he/she is being sincere and genuine? Look for flowery language or &quot;thesaurus&quot; words.</p>
         <p class="hname1"> <strong class="hname6">5.	 Concision:</strong> Help the student cut down on unnecessary words and sentences. Especially pay attention to repetitive areas and eliminate them.</p>
         <p class="hname1"> <strong class="hname6">6.	Specific:</strong> Is the writer using specific examples to develop her points? Avoid making general statements without concrete support. </p>
-        <p class="hname1"><strong class="hname6">7.	Language:</strong> Check for proper English usage. Correct for colloquial terms, clichés, acronyms. Check for logical word order, proper grammar and spelling. Is the essay easy to read or are there awkward parts? Don't change too many of the words to make it sound &quot;sophisticated&quot;. We want to preserve the writer's voice and style. </p>
+        <p class="hname1"><strong class="hname6">7.	Language:</strong> Check for proper English usage. Correct for colloquial terms, clich�s, acronyms. Check for logical word order, proper grammar and spelling. Is the essay easy to read or are there awkward parts? Don't change too many of the words to make it sound &quot;sophisticated&quot;. We want to preserve the writer's voice and style. </p>
         <p class="hname1"><strong class="hname6">8.	Additional Resources: </strong><a href="http://www.collegeboard.com/student/apply/essay-skills/9406.html " class="hname1">http://www.collegeboard.com/student/apply/essay-skills/9406.html </a></p>
       </div>
     </div>

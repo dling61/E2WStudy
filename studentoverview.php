@@ -51,7 +51,7 @@ function DoMenu(emid){
         <h1 class="texttitle">Overview</h1>
         <p class="hname1"><span class="hname6">1.</span> Click on the profile tab and fill out your profile information. Or, upload a resume. </p>
         <p class="hname1"><span class="hname6">2. </span>Submit your essay under the &quot;Submit New Essay&quot; tab. </p>
-        <p class="hname1"><span class="hname6">3.</span> Submit payment. Our accepted methods of payment are Visa/Mastercard, Paypal, and Alipay.</p>
+        <p class="hname1"><span class="hname6">3.</span> Submit payment. Our accepted methods of payment are Visa/Mastercard and Paypal.</p>
         <p class="hname1"> <span class="hname6">4. </span>You should receive your edited essay after 48 hours. Check the &quot;My Essays&quot; tab to view your edited essay.</p>
         <p class="hname1"> <span class="hname6">5. </span>To upload a revised version of your essay, use the upload essay function in the &quot;My Essays&quot; tab. </p>
       </div>

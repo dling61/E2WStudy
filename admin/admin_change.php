@@ -1,16 +1,11 @@
-
 <?php
-
+  session_start();
   require_once('../common.php');
   require_once('../common_fns.php');
   
-  session_start();
-  
   // ensure the user is logged
-  check_valid_user();
-  
+  check_valid_user(); 
 ?>
-
 <?php 
        
         $change_ssid = $_POST["SSID"];
@@ -27,7 +22,6 @@
 		}
 		mysql_close();
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

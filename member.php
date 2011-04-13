@@ -17,8 +17,7 @@
 	  catch (Exception $e)
 	  {
 	    //unsucceful lgin and go back the login password
-		echo 'You could not be logged in.
-		         You must be logged in to view this page.';
+		//echo 'You could not be logged in. You must be logged in to view this page.';
 		// go back to the login.page
 		header ('Location:login.php') ; 
 		exit;

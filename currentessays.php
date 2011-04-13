@@ -1,19 +1,14 @@
-
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('config/appvars.php');
   require_once('common_fns_editor.php');
   
-  session_start();
-  
   // ensure the user is logged
-  check_valid_user();
-  
+  check_valid_user(); 
 ?>
 <?php
-    
 	if(isset($_POST['save_x'])){
 		$comments = $_POST['comments'];
 		$uploadfile_name = $_FILES['uploadfile']['name'];
@@ -115,19 +110,16 @@
 				</table>
 				</div>
 				</div>
-				<form name="smform" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-				<!-- post version ID and essay ID so a file can be inserted into a essay  -->
-				<input type="hidden" name="essayid" value="<?php echo $eid; ?>" />
-				<input type="hidden" name="versionid" value="<?php echo $_SESSION['versionid']+ 1; ?>" />
               <div id="current5">
 				<div id="browseaera3">
 				<p class="hname8" >Upload Revised Essay </p>
                  <div id="browseaera2">
+				 <form name="smform" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+				<!-- post version ID and essay ID so a file can be inserted into a essay  -->
+				<input type="hidden" name="essayid" value="<?php echo $eid; ?>" />
+				<input type="hidden" name="versionid" value="<?php echo $_SESSION['versionid']+ 1; ?>" />
 				<input name="uploadfile" type="file" class="text1" id="uploadessay" />
 				</div>
-				<!--
-				 <div id="brow"><img src="images/browse01.gif" width="60" height="24" /></div>
-				 -->
 				</div>
 			   <div id="inputaera">
 				<p class="hname8">Comments (Anything in particular you want the editor to look at in your essay)</p>
@@ -136,10 +128,8 @@
 				</p>
 				</div>				
                   <div id="save"><input type="image" alt="submit" name="save" src="images/save01.gif" width="60" height="24" /></div>
+			    </form>
 			   </div>
-			   </div>
-			   </form>
-			   <br />
 		       </div>
 	<?php	
 			}
@@ -154,9 +144,6 @@
 		
 	}//function
 ?>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -178,7 +165,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
 <div id="header">
@@ -201,7 +187,6 @@ function DoMenu(emid){
         </div>
       </div>
     </div>
-  </div>
 </div>
 <div class="clearfloat"></div>
 <div id="foot">

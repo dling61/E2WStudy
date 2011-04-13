@@ -87,7 +87,7 @@ function validEmail($email)
            $_SESSION['firstname'] = $row['first_name'];
 		   $_SESSION['usertype'] = $row['user_type'];
 		   $_SESSION['phone'] = $row['phone_number'];
-		   $_SESSION['phone'] = $user_username;
+		   $_SESSION['email'] = $user_username;
 		   $_SESSION['cart'] = array();
 		   //setcookie('user_id', $row['uid'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
            //setcookie('firstname', $row['first_name'], time() + (60 * 60 * 24 * 30));  // expires in 30 days

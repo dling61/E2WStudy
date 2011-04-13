@@ -1,17 +1,10 @@
 <?php
-
+  session_start();
   require_once('../common.php');
   require_once('../common_fns.php');
-  
-  session_start();
-  
   // ensure the user is logged
-  check_valid_user();
-  
-?>
-   
-   
-   
+  check_valid_user(); 
+?>    
 <?php
 	// Check if delete button active, start this 
 	//if($save){
@@ -156,4 +149,4 @@ if((LastLeftID!="")&&(emid!=LastLeftID)){
 	</div>
 	</div>
 	</body>
- </html> 
+ </html>

@@ -9,8 +9,8 @@
 	$tx_token = $_GET['tx'];
 	// token for sand box
 	// TDB to change it in the production
-	//$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
-	$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
+	$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
+	//$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
 
 	$req .= "&tx=$tx_token&at=$auth_token";
 
@@ -18,7 +18,8 @@
 	$header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-	$fp = fsockopen (PAYPAL_URL, 80, $errno, $errstr, 30);
+	//$fp = fsockopen (PAYPAL_URL, 80, $errno, $errstr, 30);
+	$fp = fsockopen ('www.sandbox.paypal.com', 80, $errno, $errstr, 30);
 	// If possible, securely post back to paypal using HTTPS
 	// Your PHP server will need to be SSL enabled
 	// $fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
@@ -59,27 +60,26 @@
 			// check that receiver_email is your Primary PayPal email
 			// check that payment_amount/payment_currency are correct
 			// process payment
-			$firstname = $keyarray['first_name'];
-			$lastname = $keyarray['last_name'];
+		
 			// display multiple item names
 			$numcartitems = $keyarray['num_cart_items'];
 			
-			for ($i=1; $i <= numcartitems; $i++) {
+			for ($i=1; $i <= $numcartitems; $i++) {
 				// variable names
 				$itemname   = "item_name"."$i";
 				$itemamount = "mc_gross_"."$i";
 				$cartitems[$i-1] = array($keyarray[$itemname], $keyarray[$itemamount]);
-
 			}
+			
 			$amount = $keyarray['mc_gross'];
 			// pass back from Paypal
-			$userid_paypal = $keyarray['custom'];
+			$returncustom = $keyarray['custom'];
 			
-			// check the user_id and then restore the session
-			unset($userid);
-			if ($_COOKIE['user_id']) {
-			  $userid = $_COOKIE['user_id'];
-			  if ($userid_paypal == $userid) {
+			// check the custom and then restore the session
+			unset($custom);
+			if ($_COOKIE['custom']) {
+			  $custom = $_COOKIE['custom'];
+			  if ($returncustom == $custom) {
 				// restore the session
 				$_SESSION['userid_id'] = $_COOKIE['user_id'];
 				$_SESSION['firstname'] = $_COOKIE['firstname'];
@@ -97,17 +97,15 @@
 				// need to relogin
 				header ('Location:main.php') ;
 			}
-
 		}
 		else if (strcmp ($lines[0], "FAIL") == 0) {
 		// log for manual investigation
 		}
-
 	}
 	fclose ($fp);
-
+	
 	function display_item() {
-	    
+	    global $cartitems, $numcartitems;
 		for ($i=1; $i <= $numcartitems; $i++) {
 			echo '<tr>';
 			echo '<td align="center" valign="middle" bgcolor="#FFFFFF">'.$i.'</td>';
@@ -116,7 +114,6 @@
 			echo '</tr>';
 		}
 	}
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -159,11 +156,9 @@ function DoMenu(emid){
     <div id="mcontect">
       <div id="step">
         <ul>
-		<!--
-          <li><a href="Submit Essay page_step_1.html">Submit Essay </a></li>
-          <li><a href="Submit Essay page_step_2.html">Review Order and Pay </a></li>
-          <li><a href="Confirmation.html"> Confirmation</a></li>
-		  -->
+		  <li><a>1 Submit Essay</a></li>
+          <li><a>2 Review Order and Pay </a></li>
+          <li><a style="background-color:red">3 Confirmation</a></li>
         </ul>
       </div>
       <div id="profile">

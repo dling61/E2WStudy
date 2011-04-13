@@ -7,9 +7,7 @@
   // ensure the user is logged
   check_valid_user();
 ?>
-
 <?php 
-
     $subjects = "";
     $interests = "";
 	$activities = "";
@@ -26,10 +24,7 @@
   // Connect to the database
   $dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
   
-  //if ($_SERVER['REQUEST_METHOD'] = 'POST'){
-    //$me = $_SERVER['PHP_SELF'];
   if (isset($_POST['submit'])) {
-    echo 'It will submit a form';
     // Grab the profile data from the POST
     $subjects = mysqli_real_escape_string($dbc, trim($_POST['subjects']));
     $interests = mysqli_real_escape_string($dbc, trim($_POST['interests']));
@@ -45,27 +40,24 @@
 	$result = mysqli_query($dbc, $query);
 	
 	// TBD: may need to check the number of $result->num_rows
-	if (!$result) {
+	if(mysqli_num_rows($result)==0){
 		// insert a new profile
-		echo 'Insert';
-		$query = "insert into user_profiles values ('$user_id', '$subjects','$interests','$activities','$experiences','$plans','$adversity','$skills','$rolemodel','$environment')";
+		$query = "insert into user_profiles (uid, subjects, interests, activities, experiences, plans, adversity, skills, rolemodel, environment) ".
+		          "values ('$user_id', '$subjects','$interests','$activities','$experiences','$plans','$adversity','$skills','$rolemodel','$environment')";
 		$result = mysqli_query($dbc, $query);
 		if (!$result) 
 		  throw new Exception('Could not insert a profile into database'.' - please try again late.');
 	}
 	else {
-	    echo 'Update';
 	   // update an existing one
 		$query = "UPDATE user_profiles SET subjects = '$subjects', ".
 				   " interests = '$interests', activities = '$activities', " .
 				   " experiences = '$experiences', plans = '$plans', adversity = '$adversity', ".
-				   " skills = '$skills', rolemodel = '$rolemodel', environment = '$environment' WHERE uid = '$user_id'";
-			
+				   " skills = '$skills', rolemodel = '$rolemodel', environment = '$environment' WHERE uid = '$user_id'";	
 		$result = mysqli_query($dbc, $query);
 		if (!$result) 
 		  throw new Exception('Could not update a profile in the database'.' - please try again late.');
 	}
-		
 		//redirect to the student overview page
 		header ('Location:studentoverview.php') ;
   } // End of check for form submission
@@ -77,7 +69,6 @@
     $row = mysqli_fetch_array($data);
 
     if ($row != NULL) {
-	  
 		$subjects = $row['subjects'];
 		$interests = $row['interests'];
 		$activities = $row['activities'];
@@ -92,13 +83,8 @@
       //throw new Exception('Could not get a profile in the database'.' - please try again late.');
     }
   }
-  
   mysqli_close($dbc);
 ?>
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -120,7 +106,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
   <div id="header">

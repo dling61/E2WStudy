@@ -1,15 +1,10 @@
-﻿<?php
-
+<?php
+	session_start();
 	require_once('common.php');
 	require_once('common_fns.php');
-  
-	session_start();
-  
 	// ensure the user is logged
 	check_valid_user();
-  
 ?>
-
 <?php
     $message;
     
@@ -102,7 +97,7 @@ function DoMenu(emid){
 <body>
 <div id="ftop">
   <div id="header">
-    <div id="usename2">Welcome to&nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
+   <div id="usename">Welcome  &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.php"><img src="images/logout.gif" width="10" height="10" />&nbsp;Logout</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="changepw.php">Change Password</a></div>
   </div>
 </div>
 <div class="clearfloat"></div>
@@ -117,7 +112,7 @@ function DoMenu(emid){
         </div>
       </div>
       <div id="loginline2">
-        <div id="loginname2"> New Password:  </div>
+        <div id="loginname2"> New Password: </div>
         <div id="loginput3">
           <input type="password" name="newpw1" class="loginaera"/>
         </div>

@@ -98,7 +98,7 @@ function checkForm() {
 <div id="maincontect">
   <div id="leftnav">
     <h1>STUDENT</h1>
-    <<?php display_student_side_menu(); ?>
+    <?php display_student_side_menu(); ?>
   </div>
   <div id="mainSubE1">
     <div id="mcontect">

@@ -134,7 +134,10 @@
 				echo "Sorry no essay";
 			}
 			++$count;
-		}		
+		}	
+		if ($count == 1) {
+			 echo '<h2 class="hname4">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;No essay is needed for you to revise at this moment.        </h2>';
+		}
 		mysqli_close($dbc);
 		
 	}//function

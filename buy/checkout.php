@@ -80,6 +80,8 @@
 
 	//insert a transaction ID into service selection table
 	checkout();
+	// set the cookie to remember the transaction ID
+	setcookie('custom', $txns, time() + (60 * 60 * 24 ));  // expires in one day
 	// redirect to paypal web site
 	paypal();
 ?>

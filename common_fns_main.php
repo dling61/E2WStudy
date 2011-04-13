@@ -1,4 +1,3 @@
-
 <?php
  // left side manu for student login
  function display_main_tab() {
@@ -61,6 +60,5 @@
     echo '    All rights reserved. </p>';
     echo '</div>';
  
- }
- 
+ } 
 ?>

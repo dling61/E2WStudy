@@ -1,21 +1,14 @@
-
-
 <?php
-
+  session_start();
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('common_fns_editor.php');
   
-  session_start();
-  
   // ensure the user is logged
-  check_valid_user();
-  
+  check_valid_user(); 
 ?>
-
 <?php
-
-// first search the database to get the list of essay; only show "completed" essays 		
+     // first search the database to get the list of essay; only show "completed" essays 		
 	function display_essay(){
 	
 		$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME)or die('Database Error 2!');
@@ -43,7 +36,6 @@
 		}
 	}
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -65,7 +57,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
 <div id="header">

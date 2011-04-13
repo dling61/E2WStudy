@@ -1,11 +1,7 @@
 <?php 
    require_once('common_fns.php');
    require_once('common_fns_main.php');
-?>
-
-<?php
 	global $error_msg;
- 
 	if (isset($_POST['submit_x'])) {
 		$username = $_POST['username'];
 		$email    = $_POST['email'];
@@ -35,11 +31,9 @@
 		}
 		else {
 			$error_msg.="Please try again. <br />";
-		}
-		
+		}	
 	}
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -61,7 +55,6 @@ function DoMenu(emid){
 -->  
 </script>
 </head>
-
 <body>
 <div id="ftop">
   <div id="header">
