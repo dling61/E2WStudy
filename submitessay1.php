@@ -110,7 +110,7 @@ function checkForm() {
         </ul>
       </div>
 	  <form name="smform" enctype="multipart/form-data" method="post" action="addessay.php" onSubmit="return checkForm()">
-      <input type="hidden" name="MAX_FILE_SIZE" value="32768" />
+      <input type="hidden" name="MAX_FILE_SIZE" value="327680000" />
 	  <div id="profile">
         <div id="Selection">
           <div id="selectiontitle">&nbsp;&nbsp;Package Selection</div>
@@ -154,13 +154,7 @@ function checkForm() {
             <div id="browseaera">
               <div id="browseaera2">
                 <input name="uploadfile" type="file" class="text1" id="uploadfile" onchange="file_selected = true;" />
-				<!--
-				<input type="hidden" name="MAX_FILE_SIZE" value="327680000" />
-				-->
               </div>
-			  <!--
-              <div id="brow"><a href="" >Browse</a></div>
-			  -->
             </div>
           </div>
           <div id="PackageSelection">

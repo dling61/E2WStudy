@@ -21,10 +21,10 @@
 		$comments = $_POST['comments'];
 		
 		//echo "$uploadfile_name" . "<br />";
-		echo $uploadfile_size;
+		//echo $uploadfile_size;
 		//echo "$uploadfile_type" . "<br />";
 		//echo $_FILES["uploadfile"]["error"]; 
-		exit;
+		//exit;
 		
 		if ($_FILES["uploadfile"]["error"] > 0)
 		{

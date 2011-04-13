@@ -9,8 +9,8 @@
 	$tx_token = $_GET['tx'];
 	// token for sand box
 	// TDB to change it in the production
-	$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
-	//$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
+	//$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
+	$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
 
 	$req .= "&tx=$tx_token&at=$auth_token";
 
@@ -18,8 +18,8 @@
 	$header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-	//$fp = fsockopen (PAYPAL_URL, 80, $errno, $errstr, 30);
-	$fp = fsockopen ('www.sandbox.paypal.com', 80, $errno, $errstr, 30);
+	$fp = fsockopen (PAYPAL_URL, 80, $errno, $errstr, 30);
+	//$fp = fsockopen ('www.sandbox.paypal.com', 80, $errno, $errstr, 30);
 	// If possible, securely post back to paypal using HTTPS
 	// Your PHP server will need to be SSL enabled
 	// $fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
