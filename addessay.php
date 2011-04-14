@@ -7,7 +7,6 @@
   check_valid_user();
 ?>
 <?php
-
 	if((isset($_POST['addanother_x']))||(isset($_POST['continue_x']))){
 	    $service = $_POST['selectop'];
 		$essayname = $_POST['essayname'];
@@ -19,12 +18,6 @@
 		$uploadfile_type = $_FILES['uploadfile']['type'];
 		$uploadfile_size = $_FILES['uploadfile']['size'];
 		$comments = $_POST['comments'];
-		
-		//echo "$uploadfile_name" . "<br />";
-		//echo $uploadfile_size;
-		//echo "$uploadfile_type" . "<br />";
-		//echo $_FILES["uploadfile"]["error"]; 
-		//exit;
 		
 		if ($_FILES["uploadfile"]["error"] > 0)
 		{
@@ -42,9 +35,8 @@
 		}
 		
 		if(($uploadfile_type=='application/msword'||$uploadfile_type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-		       || $uploadfile_type=='text/plain')&&($uploadfile_size>0)&&($uploadfile_size<=GW_MAXFILESIZE)){
-		//if(($uploadfile_size>0)&&($uploadfile_size<=GW_MAXFILESIZE)){		
-				
+		       || $uploadfile_type=='text/plain')&&($uploadfile_size>0)){	
+						
 						$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 						
 						mysqli_autocommit($dbc, FALSE);
@@ -89,8 +81,7 @@
 						}
 						if(isset($_POST['continue_x'])){	
 							header("Location:submitessay2.php");
-						}
-														
+						}									
 			}
 			else {
 				header("Location:submitessay1.php");	

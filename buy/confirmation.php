@@ -9,8 +9,9 @@
 	$tx_token = $_GET['tx'];
 	// token for sand box
 	// TDB to change it in the production
-	//$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
-	$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
+	$auth_token = "uWaLjkNaKHr9EeLceCQvWO1uV6xWjShCs7WkbNA16MblVN0d5x9FVtbbWIK";
+	//$auth_token = '"' . PAYPAL_AUTH_TOKEN . '"';
+	$auth_token = PAYPAL_AUTH_TOKEN;
 
 	$req .= "&tx=$tx_token&at=$auth_token";
 
@@ -26,6 +27,7 @@
 
 	if (!$fp) {
 	// HTTP ERROR
+	   echo "this is a http error";
 	} 
 	else {
 		fputs ($fp, $header . $req);
@@ -79,6 +81,7 @@
 			unset($custom);
 			if ($_COOKIE['custom']) {
 			  $custom = $_COOKIE['custom'];
+			  
 			  if ($returncustom == $custom) {
 				// restore the session
 				$_SESSION['userid_id'] = $_COOKIE['user_id'];
@@ -99,7 +102,8 @@
 			}
 		}
 		else if (strcmp ($lines[0], "FAIL") == 0) {
-		// log for manual investigation
+		  // log for manual investigation
+		  echo " Failed on input";
 		}
 	}
 	fclose ($fp);

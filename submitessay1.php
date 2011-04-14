@@ -110,7 +110,7 @@ function checkForm() {
         </ul>
       </div>
 	  <form name="smform" enctype="multipart/form-data" method="post" action="addessay.php" onSubmit="return checkForm()">
-      <input type="hidden" name="MAX_FILE_SIZE" value="327680000" />
+      <input type="hidden" name="MAX_FILE_SIZE" value="32768000" />
 	  <div id="profile">
         <div id="Selection">
           <div id="selectiontitle">&nbsp;&nbsp;Package Selection</div>
