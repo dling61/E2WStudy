@@ -109,7 +109,7 @@ function validEmail($email)
 	else
 	{
 	    // they are not login
-		echo 'You are not login in <br>';
+		//echo 'You are not login in <br>';
 		header("Location:login.php");
 		exit;
     }
