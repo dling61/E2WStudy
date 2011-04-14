@@ -24,7 +24,7 @@
   // Connect to the database
   $dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
   
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['submit_x'])) {
     // Grab the profile data from the POST
     $subjects = mysqli_real_escape_string($dbc, trim($_POST['subjects']));
     $interests = mysqli_real_escape_string($dbc, trim($_POST['interests']));

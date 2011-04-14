@@ -22,7 +22,7 @@
 		if($error_msg=='') {
 			/* all is well so do what you need to */
 			$recipient = "admin@e2wstudy.com";
-			$subject   = "Contact Request from our customer";
+			$subject   = "Contact Request from our customer e2wstudy.com";
 			$message   = '$coment' . '<br />' . ' from $username ' . ' $phone '. 'email address is $email';
 			// mail to admin
 			mail($recipient, $subject, $message);

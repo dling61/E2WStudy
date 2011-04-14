@@ -50,13 +50,15 @@
 	$header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
 	 
 	// If testing on Sandbox use: 
-	$header .= "Host: www.sandbox.paypal.com:443\r\n";
+	//$header .= "Host: www.sandbox.paypal.com:443\r\n";
+	$header .= "Host: " . PAYPAL_URL . ":443\r\n";
 	//$header .= "Host: www.paypal.com:443\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 
-	// If testing on Sandbox use:
+	// TBD for some reson we can't use constant here
 	$fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+	//$fp = fsockopen (PAYPAL_SOCK_CONNECTION, 443, $errno, $errstr, 30);
 	//$fp = fsockopen ('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 
 	if (!$fp) {
