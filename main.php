@@ -67,7 +67,7 @@ function DoMenu(emid){
       <div id="dleftimg" >
         <ul>
           <br />
-          <img src="images/front-page_image3.gif" width="260" height="157" />
+          <img src="images/front-page_image3.jpg" width="260" height="157" />
         </ul>
       </div>
     </div>
@@ -86,7 +86,7 @@ function DoMenu(emid){
     <div id="dleft">
       <div id="dleftimg2">
         <ul>
-          <img src="images/front-page_image2.gif" width="256" height="193" />
+          <img src="images/front-page_image2.jpg" width="256" height="193" />
         </ul>
       </div>
     </div>
