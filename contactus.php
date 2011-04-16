@@ -148,6 +148,7 @@ function DoMenu(emid){
     <p>&nbsp;</p>
     <p>&nbsp;</p>
   </div>
+</div>
   <div class="clearfloat"></div>
   <div id="foot">
     <div id="footer">
@@ -158,6 +159,6 @@ function DoMenu(emid){
       </div>
     </div>
   </div>
-</div>
+
 </body>
 </html>

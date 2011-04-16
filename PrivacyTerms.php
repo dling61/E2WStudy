@@ -71,7 +71,7 @@
       </div>
     </div>
   </div>
-
+  </div>
 <div class="clearfloat"></div>
 <div id="foot">
   <div id="footer">
@@ -81,7 +81,6 @@
         All rights reserved. </p>
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
