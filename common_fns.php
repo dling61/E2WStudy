@@ -128,4 +128,10 @@ function validEmail($email)
  {
  
  }
+ 
+ function copyright_portion()
+ // a common code for the copyright
+ {
+   echo '<p style="text-align:center">      Copyright &#169 2011 E2Wstudy, LLC.  All rights reserved. </p>';
+ }
 ?>

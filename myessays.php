@@ -75,17 +75,17 @@
   ?>
                 <div id="current2">
 				  <div id="current4">
-					<h2 class="hname4"><?php echo $count. '.'; ?> Essay Name: <?php echo $row0['ename'];?> Service Name:<?php if ($row0['stypeid'] == 1) echo ' Basic'; else echo ' Comprehensive'; ?> </h2> 
+					<h2 class="hname4"><?php echo $count. '.'; ?> Essay Name: <?php echo $row0['ename'];?> Service Package:<?php if ($row0['stypeid'] == 1) echo ' Basic'; else echo ' Comprehensive'; ?> </h2> 
 				    <div id="Curtable2">
-				    <table width="650" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"> 
+				    <table width="650" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999" id="showlink"> 
 				    <tr> 
 				      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Version</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Submitted Essay </strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Date Submitted</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Comments</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Student Comment</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Essay</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Date</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Comments</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Editor Comment</strong></td>
 				    </tr> 
 			<?php
 			    // the change history of an essay
@@ -191,9 +191,7 @@ function DoMenu(emid){
 <div id="foot">
   <div id="footer">
     <div id="copyright">
-      <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-        Copyright &amp;copy 2011 E2Wstudy.com LLC<br />
-        All rights reserved. </p>
+      <?php copyright_portion(); ?>
     </div>
   </div>
 </div>

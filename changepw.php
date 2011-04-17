@@ -149,9 +149,7 @@ function DoMenu(emid){
 <div id="foot">
   <div id="footer">
     <div id="copyright">
-      <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-        Copyright &amp;copy 2011 E2Wstudy.com LLC<br />
-        All rights reserved. </p>
+      <?php copyright_portion(); ?>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 <?php 
    require_once('common_fns_main.php');
+   require_once('common_fns.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -86,9 +87,7 @@ function DoMenu(emid){
 <div id="foot">
   <div id="footer">
     <div id="copyright">
-      <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-        Copyright &amp;copy 2011 E2Wstudy.com LLC<br />
-        All rights reserved. </p>
+       <?php copyright_portion(); ?>
     </div>
   </div>
 </div>

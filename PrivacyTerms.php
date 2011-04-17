@@ -1,6 +1,7 @@
 
 <?php 
    require_once('common_fns_main.php');
+    require_once('common_fns.php');
 ?>
 
 
@@ -76,9 +77,7 @@
 <div id="foot">
   <div id="footer">
     <div id="copyright">
-      <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-        Copyright &amp;copy 2011 E2Wstudy, LLC (U.S.A) <br />
-        All rights reserved. </p>
+       <?php copyright_portion(); ?>
     </div>
   </div>
 </div>

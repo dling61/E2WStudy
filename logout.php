@@ -9,7 +9,7 @@ $old_user = $_SESSION['user_id'];
 	  if ($result_dest)
 	  {
 		// if they were logged in and are now logged out
-		header ('Location:main.php');
+		header ('Location:index.php');
 	  }
 	  else
 	  {

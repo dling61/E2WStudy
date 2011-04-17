@@ -991,7 +991,7 @@ a:hover {
 	font-size: 16px;
 }
 #step {
-	width:680px;
+	width:587px;
 	height:30px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 18px;
@@ -1000,7 +1000,7 @@ a:hover {
 	margin-top: 20px;
 }
 #step2 {
-	width:680px;
+	width:619px;
 	height:30px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
@@ -1419,7 +1419,6 @@ a:hover {
 	margin-top: 5px;
 	width: 400px;
 }
-
 #loginput3 {
 	float: left;
 	height: 30px;
@@ -1498,4 +1497,17 @@ a:hover {
 	height: 650px;
 	width: 680px;
 	padding-bottom: 50px;
+}
+#showlink {
+	color: #000;
+	text-decoration: none;
+	line-height: 20px;
+}
+#showlink a:link {
+	color: #03F;
+	text-decoration: underline;
+}
+#showlink a:hover {
+	color: #009;
+	text-decoration: underline;
 }

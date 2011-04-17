@@ -1,6 +1,7 @@
 <?php 
     require_once("common.php");
 	require_once('common_fns_main.php');
+	require_once('common_fns.php');
 
 	if(isset($_POST['submit_x'])) {
 	    //check
@@ -51,7 +52,7 @@
 				echo '</br></br>';
 				echo '<center><div id="clearfloat"><b>THANK YOU</b><br><br><br>Your password is posted to your emil address . Please check your mail after some time. </div></center>';
 				echo '</br>';
-				echo '<center><a href="main.php"> Please Go back to E2WSTUDY.COM </a></center>';
+				echo '<center><a href="index.php"> Please Go back to E2WSTUDY.COM </a></center>';
 				echo '</div>';
 				echo '<br><br><br><br><br>';
 				footer_portion();
@@ -102,8 +103,7 @@
 	</form>
     </div>
   </div>
-  <div id="signcpright">Questions? Contact Customer Service at: 1-800-555-1234(US) <br />
-    Copyright © 2011 E2Wstudy.com LLC All rights reserved </div>
+  <div id="signcpright"><?php copyright_portion(); ?></div>
 </div>
 </body>
 </html>

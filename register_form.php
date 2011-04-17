@@ -99,7 +99,7 @@
  
 <body>
   <div id="signborder">
-  <div id="signupheader"><a href="main.php"><image src="images/Register%20bgi.gif" /></a></div>
+  <div id="signupheader"><a href="index.php"><image src="images/Register%20bgi.gif" /></a></div>
   <p><?php if ($error_msg !='') { echo '<font COLOR="#FF0000">' . $error_msg . '</font>'; } ?></p>
   <form method="post" action="register_form.php">
   <div id="signin">
@@ -165,6 +165,6 @@
   </div>  
 </form>  
 </div>
-<div id="signcpright">Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy.com LLC All rights reserved</div>
+<div id="signcpright">Copyright © 2011 E2Wstudy, LLC. All rights reserved</div>
 </body>
  </html>

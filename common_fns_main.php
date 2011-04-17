@@ -2,7 +2,7 @@
  // left side manu for student login
  function display_main_tab() {
      
-	echo '<li><a href="main.php">HOME</a></li>';
+	echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="aboutus.php">ABOUT</a></li>';
     echo '<li><a href="servicesoverview.php">SERVICES</a></li>';
 	echo '<!--';
@@ -44,13 +44,11 @@
  
  }
  
- function copyright_portion() {
- 
-	echo '<div id="signcpright">';
-	echo 'Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy, LLC U.S.A All rights reserved';
-	echo '</div>';
- 
- }
+ //function copyright_portion() {
+//	echo '<div id="signcpright">';
+//	echo 'Questions? Contact Customer Service at: 1-800-555-1234(US) Copyright © 2011 E2Wstudy, LLC U.S.A All rights reserved';
+//	echo '</div>';
+// }
   
  function copyright_portion_background() {
  

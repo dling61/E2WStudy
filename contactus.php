@@ -27,7 +27,7 @@
 			// mail to admin
 			mail($recipient, $subject, $message);
 			
-			header('Location: main.php');
+			header('Location: index.php');
 		}
 		else {
 			$error_msg.="Please try again. <br />";
@@ -85,7 +85,7 @@ function DoMenu(emid){
       <strong>Beijing Time</strong>: Monday to Friday <BR />
       8:30 AM - 6:00 PM</li>
     <li>
-      <p class="hname13">Social Meadia</p>
+      <p class="hname13">Social Network</p>
     </li>
     <li>FACEBOOK </li>
     <li>PRENREN </li>
@@ -148,17 +148,14 @@ function DoMenu(emid){
     <p>&nbsp;</p>
     <p>&nbsp;</p>
   </div>
-</div>
   <div class="clearfloat"></div>
   <div id="foot">
     <div id="footer">
       <div id="copyright">
-        <p>Questions? Contact Customer Service at: 1-800-555-1234(US)<br />
-          Copyright &amp;copy 2011 E2Wstudy.com LLC<br />
-          All rights reserved. </p>
+        <?php copyright_portion(); ?>
       </div>
     </div>
   </div>
-
+</div>
 </body>
 </html>

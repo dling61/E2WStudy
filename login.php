@@ -1,4 +1,5 @@
 <?php
+	require_once('common_fns.php');
 	require_once('common_fns_main.php');
 ?>
 
@@ -14,7 +15,7 @@
 <form name="loginform" method="post" action="member.php">
 <div id="login">
   <div id="loginright">
-    <div id="logintitle"><a href="main.php"><img src="images/logintitleimg.gif" width="550" height="65" /></a><br />
+    <div id="logintitle"><a href="index.php"><img src="images/logintitleimg.gif" width="550" height="65" /></a><br />
     </div>
     <div id="loginaera">
       <div id="loginline">
@@ -35,7 +36,9 @@
     </div>
     <div id="loginforgot"><a href="forgotpw.php" class="linktext">Forgot your password?</a></div>
   </div>
-  <?php copyright_portion(); ?>
+  <div id="signcpright">
+      <?php copyright_portion(); ?>
+  </div>
 </div>
 </body>
 </html>

@@ -160,7 +160,7 @@ function checkForm() {
           <div id="PackageSelection">
             <p class="hname8" >5.Questions or comments you want the editor to address:</p>
             <p class="aeraborder2">
-              <textarea class="area" name="comments" id="textarea5" cols="45" rows="5"></textarea>
+              <textarea class="area" name="comments" id="textarea5" cols="45" rows="10"></textarea>
             </p>
           </div>
           <div id="addor"><input name="addanother" type="image" src="images/add01.gif" width="150" height="24" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" name="continue" src="images/Continue01.gif" width="150" height="24" /></div>
@@ -176,7 +176,7 @@ function checkForm() {
 <div class="clearfloat"></div>
 <div id="foot">
   <div id="footer">
-	<?php copyright_portion_background(); ?>
+	<?php copyright_portion(); ?>
   </div>
 </div>
 </body>
