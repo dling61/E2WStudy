@@ -46,7 +46,7 @@ function DoMenu(emid){
 <div id="maincontect">
   <div id="leftnav">
     <h1>SERVICES</h1>
-    <li><a href="ServicesOverview.php">Overview</a></li>
+    <li><a href="servicesoverview.php">Overview</a></li>
   </div>
   <div id="mainGetS">
     <div id="mcontect">
