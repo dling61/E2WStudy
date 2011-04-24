@@ -87,7 +87,7 @@
 <body>
 <div id="login">
   <div id="loginright">
-    <div id="logintitle"><img src="images/forgot.gif" width="550" height="65" /><br />
+    <div id="logintitle"><a href="index.php"><img src="images/forgot.gif" width="550" height="65" /></a><br />
     </div>
 	<form name="forgotpwform" method="post" action="">
     <div id="loginaera"><br />

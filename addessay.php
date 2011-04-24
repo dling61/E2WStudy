@@ -40,7 +40,7 @@
 						$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 						
 						mysqli_autocommit($dbc, FALSE);
-						$query1 = "insert into essay (essay_name,uid)values('$essayname','".$_SESSION['user_id']."')";
+						$query1 = "insert into essay (essay_name, essay_question, word_count, uid) values('$essayname', '$essayquestion', '$wordcount', '".$_SESSION['user_id']."')";
 						
 						$result = mysqli_query($dbc,$query1);	
 						if ($result !== TRUE) {
@@ -59,7 +59,7 @@
 
 						$query3 = "insert into service_selection".
 						     "(uid,essay_id,service_type_id, discount, pay_amount, service_status,transaction_id, create_datetime, submit_date, delivery_date, editor_id, admin_user_id, last_update_datetime) ".
-							 "values(".$_SESSION['user_id'].", '$eid', '$service', '', '', 'selected', '', NOW(), CURDATE(), '', '','','' )";
+							 "values(".$_SESSION['user_id'].", '$eid', '$service', '', '', 'selected', '', NOW(), CURDATE(), '', '','',NOW())";
 						$result = mysqli_query($dbc,$query3);
 						if ($result !== TRUE) {
 							throw new Exception('can not insert it to service_selection table');

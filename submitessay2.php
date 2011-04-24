@@ -3,6 +3,7 @@
   require_once('constants.php');
   require_once('common_fns.php');
   require_once('common_fns_payment.php');
+  require_once('common_fns_student.php');
   // ensure the user is logged
   check_valid_user();
        //declare an array
@@ -15,17 +16,9 @@
 	 $myIndex = 0;
 	 // total price 
 	 $myTotal = 0;
-	 
-	// calculate the prices of each service selection
-	// TBD --- build some disaccounts here. e.g. 10 percent off for second or more services
-    function calprice() {
-	    global $myOrder, $total_basic_count, $total_comp_count, $myIndex;
-		for ($row = 0; $row < $myIndex; $row++)
-		{
-				$myOrder[$row][4] = 111;
-		}	
-	
-	}
+	 // processing fee
+	 $myFee = 0;
+    
 	// display the slected items
 	function display () {
 	
@@ -40,7 +33,7 @@
 				echo '<td align="center" valign="middle" bgcolor="#FFFFFF">Basic</td>';
 			else
 				echo '<td align="center" valign="middle" bgcolor="#FFFFFF">Comprehensive</td>';
-			echo '<td align="center" valign="middle" bgcolor="#FFFFFF">'.$myOrder[$row][4].'</td>';
+			echo '<td align="center" valign="middle" bgcolor="#FFFFFF">'.'$'.$myOrder[$row][4].'</td>';
 			echo '</tr>';
 			$myTotal = $myTotal + $myOrder[$row][4];
 		}
@@ -61,7 +54,7 @@
 		// eid     ---- essay ID
 		// uid     ---- UID
 		// price   ---- price
-		$query = "select distinct es.essay_name ename, ss.service_type_id stypeid, es.essay_id eid, ss.service_selection_id ssid, ss.service_status ssstatus from essay es, service_selection ss where ss.essay_id = es.essay_id and service_status != 'cancelled' and ss.uid = ".$_SESSION['user_id']."";
+		$query = "select distinct es.essay_name ename, es.word_count ewcount, ss.service_type_id stypeid, es.essay_id eid, ss.service_selection_id ssid, ss.service_status ssstatus from essay es, service_selection ss where ss.essay_id = es.essay_id and service_status != 'cancelled' and ss.uid = ".$_SESSION['user_id']."";
 		//$query = "select distinct es.essay_name ename, ss.service_type_id stypeid, es.essay_id eid, ss.service_selection_id ssid, ss.service_status ssstatus from essay es, service_selection ss where ss.essay_id = es.essay_id and service_status != 'cancelled' and ss.uid = 13 ";
 		$data = mysqli_query($dbc,$query)or die(mysqli_error());
 
@@ -83,7 +76,7 @@
 					else 
 					    $price = COMPREHENSIVE_PRICE;
 					 
-					$myOrder[$myIndex] = array($row1['ename'], $row1['stypeid'], $row1['eid'], $row1['ssid'], "$price");
+					$myOrder[$myIndex] = array($row1['ename'], $row1['stypeid'], $row1['eid'], $row1['ssid'], "$price", $row1['ewcount']);
 					++$myIndex;
 				}
 			}
@@ -94,50 +87,83 @@
 		}	
 		mysqli_close($dbc);
 		
-		// add these to the session 
+	}
+	
+	// calculation of price for each item
+	function calprice() {
+		global $myOrder, $myIndex;
+		$init_bcount = 0;
+		$init_ccount = 0;
+		
+		$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+		// stypeid ---  service type ID
+		$query = "select  ss.service_type_id stypeid from service_selection ss where service_status in ('assigned', 'paid', 'checkout') and ss.uid = ".$_SESSION['user_id']."";
+		$data = mysqli_query($dbc,$query)or die(mysqli_error());
+
+		$num = mysqli_num_rows($data);
+		if($num!=0){
+			while($row = mysqli_fetch_array($data)){
+				if ($row['stypeid'] == 1) {
+						++$init_bcount;
+				}
+				else {
+						++$init_ccount;
+				}
+			}
+		}
+		// 0 - essay name
+		// 1 - service type ID  1(basic); 2(comprehensive)
+		// 2 - essay ID
+		// 3 - service select ID 
+		// 4 - price
+		for ($i= 0; $i< $myIndex; $i++)
+		{
+			// basic package
+			if ($myOrder[$i][1] == 1) {
+				++$init_bcount;
+				$base_price = 0;
+				// calculate a basic price
+				if ($myOrder[$i][5] <= 450)
+					$base_price = BASIC_PRICE;
+				else if ($myOrder[$i][5] > 451 && $myOrder[$i][5] <= 550)
+					$base_price = BASIC_PRICE + 20;
+				else if ($myOrder[$i][5] > 551 && $myOrder[$i][5] <= 750)
+					$base_price = BASIC_PRICE + 40;
+				else
+					$base_price = BASIC_PRICE + 60;
+				// discount
+				if ($init_bcount == 1)
+					$myOrder[$i][4] = $base_price;
+				else if ($init_bcount == 2)
+					$myOrder[$i][4] = $base_price * 0.90;
+				else 
+					$myOrder[$i][4] = $base_price * 0.85;
+			}
+			// comprehensive package
+			else {
+				++$init_ccount;
+				if ($init_ccount == 1)
+					$myOrder[$i][4] = COMPREHENSIVE_PRICE;
+				else if ($init_ccount == 2)
+					$myOrder[$i][4] = COMPREHENSIVE_PRICE * 0.90;
+				else 
+					$myOrder[$i][4] = COMPREHENSIVE_PRICE * 0.85;
+			}
+		}	
+		mysqli_close($dbc);
+		
+		// add these to the session and then checkout page picks them up
 		$_SESSION['myOrder'] = $myOrder;
 		$_SESSION['myIndex'] = $myIndex;
-	}	
-     // this is to construct a http request to paypal
-	function paypal() {
-		global $myOrder, $total_basic_count, $total_comp_count, $myIndex, $txns;
-	    // fixed values
-		echo '<input type="hidden" name="cmd" value="_cart">';
-		echo '<input type="hidden" name="upload" value="1">';
-		echo '<input type="hidden" name="business" value="' . PAYPAL_BUSINESS_ACCOUNT . '">';
-		
-		//  dynamically generate items
-		$inumber = 1;
-		for ($row = 0; $row < $myIndex; $row++) {
-		    // multiple items 
-			$item_name = "item_name_".$inumber;
-			$item_amount = "amount_".$inumber;
-			if ($myOrder[$row][1] == 1) 
-				$item_value = $myOrder[$row][0]." "."Basic";
-			else 
-				$item_value = $myOrder[$row][0]." "."Basic";
-			echo "<input type=hidden name=$item_name  value='{$item_value}'>";
-			echo "<input type=hidden name=$item_amount value='{$myOrder[$row][4]}'>";
-			++$inumber;
-		}
-		
-		// pass the transaction ID to paypal
-		echo "<input type=hidden name=custom value='{$txns}'>";
-		
-		// fixed values
-		echo '<input type="hidden" name="currency_code" value="USD">';
-		echo '<input type="hidden" name="shipping" value="2">';
-		echo '<input type="hidden" name="return" value="http://www.e2wstudy.com/buy/confirmation.php">'; 
-		// TBD: Which cancel page to return to??
-		echo '<input type="hidden" name="cancel_return" value="http://www.e2wstudy.com/buy/PDTReturn.php">';  
-	}	
+	}
+
 ?>
 <?php
 	//call backend first
 	search();
-	
 	// May need to call calculation prices
-	// set the cookies
+	calprice($myOrder, $myIndex);
+	// set the cookies so paypal can call back
 	set_cookies();
 ?>
 
@@ -172,11 +198,7 @@ function DoMenu(emid){
 <div id="maincontect">
   <div id="leftnav">
     <h1>STUDENT</h1>
-    <li><a href="studentoverview.php">Overview</a> </li>
-    <li><a href="studentprofile.php">Profile</a></li>
-    <li><a href="submitessay1.php">Submit New Essay</a></li>
-    <li><a href="myessays.php">My Essays</a></li>
-    <li><a href="uinfo.php">Useful Information</a></li>
+    <?php display_student_side_menu(); ?>
   </div>
   <div id="mainSubE2">
     <div id="mcontect">
@@ -199,7 +221,7 @@ function DoMenu(emid){
 			<!-- It will display order items   -->
 			<?php  $payment = display();  ?>
           </table>
-          <div id="payment"><strong>Subtotal:</strong><?php echo " "."$myTotal"; ?></div>
+          <div id="payment"><strong>Subtotal: </strong><?php echo "$"."$myTotal"; ?></div>
         </div>
         <div id="pay"> &nbsp;Payment Method:
           <div id="paymentmethod">
@@ -223,13 +245,7 @@ function DoMenu(emid){
         </div>
         <div id="paymentenunciation">** When you click on &quot;Pay&quot; button, you will be redirected to an online payment website. We don't store any sensitive information on our website. </div>
       </div>
-	  <!-- this is a URL address for paypal 
-	  <form action=<?php echo '"'. PAYPAL_WEB_URL . '"' ?> method="post">
-	  -->
 	  <form action="./buy/checkout.php" method="post">
-	  <!-- call the function to contruct hidden inputs 
-	  <?php paypal(); ?>
-	  -->
       <div id="payor"><a href="submitessay1.php"><img src="images/back01.gif" width="60" height="24" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" src="images/pay01.gif" name="submit" width="60" height="24" /></div>
 	  </form>
     </div>

@@ -79,13 +79,12 @@
 				    <table width="650" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999" id="showlink"> 
 				    <tr> 
 				      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Version</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Submitted
-                          Essay </strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Submitted Essay </strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Date Submitted</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Comments</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Student Comments</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Essay</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Date</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Comments</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Editor Comments</strong></td>
 				    </tr> 
 			<?php
 			    // the change history of an essay
@@ -94,15 +93,26 @@
 			?>
 				<tr>
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["version_id"];?></td> 
-				<!--
-				<?php echo '<td align="center" valign="middle" bgcolor="#FFFFFF"><a style="color:black" href="Essaies\\'.$row1["submited_essay_name"].'">'.$row1["submited_essay_name"].'</a></td>'?>
-				-->
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><a style="color:black" href="download.php?versionid=<?php echo $row1["version_id"]; ?>&essayid=<?php echo $eid; ?>&se=s"><?php echo $row1["submited_essay_name"]; ?></a></td>
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["submit_date"];?></td> 
-				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["scomment"];?></td> 
+				<!--
+				 <td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["scomment"];?></td> 
+				 -->
+				 <td align="center" valign="middle" bgcolor="#FFFFFF">
+				  <?php 
+						if (!empty($row1["scomment"])) { 
+						  echo '<input type="button" onclick="show_alert(\'' . $row1['scomment'] .'\')" value="See comments" />';
+						}
+				  ?>
+				</td> 
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><a style="color:black" href="download.php?versionid=<?php echo $row1["version_id"]; ?>&essayid=<?php echo $eid; ?>&se=e"><?php echo $row1["edited_essay_name"]; ?></a></td> 
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["edit_date"];?></td> 
-				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["ecomment"];?></td>
+				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php 
+						if (!empty($row1["ecomment"])) { 
+						  echo '<input type="button" onclick="show_alert(\'' . $row1['ecomment'] .'\')" value="See comments" />';
+						}
+				  ?>
+				 </td>
 				 </tr>
 				 <?php
 				 }
@@ -114,15 +124,15 @@
 				<div id="browseaera3">
 				<p class="hname8" >Upload Revised Essay </p>
                  <div id="browseaera2">
-				 <form name="smform" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-				<!-- post version ID and essay ID so a file can be inserted into a essay  -->
-				<input type="hidden" name="essayid" value="<?php echo $eid; ?>" />
-				<input type="hidden" name="versionid" value="<?php echo $_SESSION['versionid']+ 1; ?>" />
-				<input name="uploadfile" type="file" class="text1" id="uploadessay" />
+					<form name="smform" enctype="multipart/form-data" method="post" action="uploadfile.php">
+					<!-- post version ID and essay ID so a file can be inserted into a essay  -->
+					<input type="hidden" name="essayid" value="<?php echo $eid; ?>" />
+					<input type="hidden" name="versionid" value="<?php echo $_SESSION['versionid']; ?>" />
+					<input name="uploadfile" type="file" class="text1" id="uploadessay" />
 				</div>
 				</div>
 			   <div id="inputaera">
-				<p class="hname8">Comments (Anything in particular you want the editor to look at in your essay)</p>
+				<p class="hname8">Comments (Anything in particular you want the student to look into)</p>
 				<p class="aeraborder2">
 					<textarea class="area" name="comments" id="textarea4" cols="45" rows="5"></textarea> 
 				</p>
@@ -151,18 +161,10 @@
 <title>Current Essays</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">  
-<!--   
-var LastLeftID = "";   
-  
-function DoMenu(emid){   
-    var obj = document.getElementById(emid);    
-    obj.className = (obj.className.toLowerCase() == "expanded"?"collapsed":"expanded");   
-    if((LastLeftID!="")&&(emid!=LastLeftID)){   
-        document.getElementById(LastLeftID).className = "collapsed";   
-    }   
-        LastLeftID = emid;   
-}   
--->  
+function show_alert(msg)
+{
+	alert(msg);
+}
 </script>
 </head>
 <body>

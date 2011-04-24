@@ -95,7 +95,7 @@ function DoMenu(emid){
       <div id="drighttext">
         <p class="fptext02">Why choose us?</p>
         <p class="fptext03"> • Our US-based team is composed of senior college students and recent graduates that have passed successfully through the college admission process.</p>
-        <p class="fptext03"> • These essay editors come from the best American Universities, including Harvard . </p>
+        <p class="fptext03"> • These essay editors come from the best American Universities, including Harvard. </p>
         <p class="fptext03">• Many of our editors are bilingual and American-born Chinese, allowing them to relate to our clients on a more personal level. </p>
       </div>
     </div>
