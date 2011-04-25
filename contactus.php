@@ -25,7 +25,7 @@
 			/* all is well so do what you need to */
 			$recipient = "customerservice@e2wstudy.com";
 			$subject   = "Contact Request from our customer e2wstudy.com";
-			$message   = " $coment  \r\n
+			$message   = " $comment  \r\n
 			               \r\n
          			      from $username   $phone  email address is $email \r\n";
 			// mail to admin
