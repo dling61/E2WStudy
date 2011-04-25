@@ -175,7 +175,7 @@ a:hover {
 /*main*/
 #mainCurE {
 	float: right;
-	height: 1000px;
+	height: auto;
 	width: 784px;
 	border-left: 1px solid #ccc;
 }

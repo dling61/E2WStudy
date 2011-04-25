@@ -67,13 +67,10 @@
 					$first_name = $row1['first_name'];
 					//mail it to the editor
 					$to   = $row1['email_address'];
-					$body = "Hello $first_name,\r\n
-								An updated essay has been loaded into the E2Wstudy.com. Please login in your account on \r\n
-								the http://www.e2wstudy.com to edit it.\r\n
-								\r\n
-							 Thank You\r\n
-							  \r\n
-							  E2Wstudy Administrator\r\n ";
+					$body = "Hi $first_name,\r\n
+							An essay has been uploaded to your account on E2WStudy.com. Please check your account and download this essay for editing. \r\n
+							Thank You,\r\n
+							E2Wstudy.com\r\n ";
 					$subject = " Student has uploaded the edited essay ";
 					send_mail_godaddy($to, $subject, $body);
 				}
@@ -98,14 +95,11 @@
 					$first_name = $row1['first_name'];
 					//mail it to the editor
 					$to   = $row1['email_address'];
-					$body = "Hello $first_name,\r\n
-								An edited essay has been loaded into the E2Wstudy.com. Please login in your account on \r\n
-								the http://www.e2wstudy.com to review it.\r\n
-								\r\n
-							 Thank You\r\n
-							  \r\n
-							  E2Wstudy Administrator\r\n ";
-					$subject = " An editor has uploaded the edited essay ";
+					$body = "Hi $first_name,\r\n
+							An essay has been uploaded to your account on E2WStudy.com. Please check your account and download this essay for editing.\r\n
+							Thank You\r\n
+							E2Wstudy.com\r\n";
+					$subject = "An editor has uploaded the edited essay";
 					send_mail_godaddy($to, $subject, $body);
 				}
 				mysqli_close($dbc);

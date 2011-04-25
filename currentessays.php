@@ -179,7 +179,6 @@ function show_alert(msg)
 	<?php display_editor_side_menu(); ?>
   </div>
   <div id="mainCurE">
-    <div id="mcontect">
       <div id="profile"><br />
         <h1 class="hname3">Current Essays</h1>
         <p class="hname4" > All your assigned essays will be listed on this page. Please come here often to check on newly assigned essays. You will have 48 hours to edit and comment on an essay. </p>
@@ -187,7 +186,6 @@ function show_alert(msg)
         <!-- first loop to get the list of essays  -->
          <?php display_essay(); ?>
         </div>
-      </div>
     </div>
 </div>
 <div class="clearfloat"></div>
