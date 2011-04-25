@@ -1,6 +1,8 @@
 <?php 
    require_once('common_fns.php');
    require_once('common_fns_main.php');
+   require_once('common_mail.php');
+   
 	global $error_msg;
 	if (isset($_POST['submit_x'])) {
 		$username = $_POST['username'];
@@ -21,11 +23,13 @@
 		
 		if($error_msg=='') {
 			/* all is well so do what you need to */
-			$recipient = "admin@e2wstudy.com";
+			$recipient = "customerservice@e2wstudy.com";
 			$subject   = "Contact Request from our customer e2wstudy.com";
-			$message   = '$coment' . '<br />' . ' from $username ' . ' $phone '. 'email address is $email';
+			$message   = " $coment  \r\n
+			               \r\n
+         			      from $username   $phone  email address is $email \r\n";
 			// mail to admin
-			mail($recipient, $subject, $message);
+			send_mail_godaddy($recipient, $subject, $message);
 			
 			header('Location: index.php');
 		}

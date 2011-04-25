@@ -1498,6 +1498,17 @@ a:hover {
 	width: 680px;
 	padding-bottom: 50px;
 }
+#pdftable a:link {
+	font-size: 14px;
+	font-weight: bold;
+	color: #F00;
+}
+#pdftable a:hover {
+	font-size: 14px;
+	font-weight: bold;
+	color: #F00;
+}
+
 #showlink {
 	color: #000;
 	text-decoration: none;

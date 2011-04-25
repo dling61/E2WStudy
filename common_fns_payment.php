@@ -10,8 +10,8 @@
 	//define('PAYPAL_AUTH_TOKEN', 'kRWoZk7a3DkK_iiPULNznUqI-dB4azlBoPclwdjtPFpJ0XzRU_UUOpNxMYm');
 	define('PAYPAL_SOCK_CONNECTION', 'ssl://www.sandbox.paypal.com');
 	//define('PAYPAL_SOCK_CONNECTION', 'ssl://www.paypal.com');
-	define('BASIC_PRICE', 2.10); 
-	//define('BASIC_PRICE', 199);
-	define('COMPREHENSIVE_PRICE', 2.50);
-	//define('COMPREHENSIVE_PRICE', 300);
+	//define('BASIC_PRICE', 2.00); 
+	define('BASIC_PRICE', 200);
+	//define('COMPREHENSIVE_PRICE', 3.00);
+	define('COMPREHENSIVE_PRICE', 300);
 ?>

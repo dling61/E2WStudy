@@ -2,6 +2,7 @@
 	require_once('../constants.php');
 	require_once('../common_fns.php');
 	require_once('../common_fns_payment.php');
+	require_once('../common_mail.php');
 	// this is to chnage the status of service selection to "checkout" so that we can assign it to editor
 	function status_update($int_txns,$ppstatus,$total_amount,$ext_txns) {
 	
@@ -93,8 +94,13 @@
 				//$mail_From = "From: customerservice@e2wstudy.com";
 				$mail_To = $payer_email;
 				$mail_Subject;
-				$mail_Body = "Dear customer: \n\n";
-				$emailtext = "Your order status is updated";
+				$mail_Body  = "Hello $first_name,\r\n
+								Your payment status has been updated. \r\n
+								If you have any question, please send email to customerserice@e2wstudy.com. \r\n
+								\r\n
+							    Thank You\r\n
+							    \r\n
+							    E2Wstudy Administrator\r\n ";
 				
 				if ($payment_status == 'Completed')
 					//($receiver_email == $our_email) &&
@@ -106,9 +112,9 @@
 				else if ($payment_status == 'Pending') {
 					$mail_Subject = "Your payment is in pending now";
 				}
-				//custom_emailtext($_POST);
+				
 				// mail to customer to inform the payment status
-				mail($mail_To, $mail_Subject, $emailtext . "\n\n" . $mail_Body);					
+				send_mail_godaddy($mail_To, $mail_Subject, $mail_Body);					
 			}
 			else if (strcmp ($res, "INVALID") == 0) {
 				// log for manual investigation
@@ -121,7 +127,7 @@
 					$emailtext .= $key . " = " .$value ."\n\n";
 				}
 				
-				//mail($mail_To, $mail_Subject, $emailtext . "\n\n" . $mail_Body, $mail_From);
+				
 				mail($mail_To, $mail_Subject, $emailtext . "\n\n" .$mail_Body);
 			
 			}

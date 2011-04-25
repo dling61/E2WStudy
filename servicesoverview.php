@@ -46,9 +46,6 @@ function DoMenu(emid){
   <div id="leftnav">
     <h1>SERVICES</h1>
     <li><a href="servicesoverview.php">Overview</a></li>
-	<!--
-    <li><a href="Useful Information.html">Useful Information</a></li>
-	-->
   </div>
   <div id="mainSerO">
     <div id="mcontect">
@@ -64,14 +61,16 @@ function DoMenu(emid){
         <h1 class="texttitle">SERVICES OVERVIEW</h1>
         <p>&nbsp;</p>
         <h2 class="hname7">College Application Essay </h2>
+		<p>&nbsp;</p>
         <h2 class="hname4">1.	Basic Essay Editing Package </h2>
         <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;Our editors will make a thorough critique of your essay, providing counsel on broad areas like essay focus and structure, as well as polishing finer areas like grammar and word choice. </p>
         <p class="hname6"><strong>Features</strong> </p>
         <p class="hname1">•Your essay will be reviewed twice by the same editor, allowing for feedback on revisions.</p>
         <p class="hname1">•	 After submission, edited essay will be returned within 2 days.</p>
         <p class="hname1"> •	Total time = Time for Editor(2 days x 2) + the time a student spends on revising essay. </p>
-        <p class="hname1">•	For more information about this package, click here(hyperlink to the page &quot;Steps_Timeline.docx&quot;). </p>
-        <p class="hname6"><strong>Pricing </strong> </p>
+        <p class="hname1">•	For more information about this package, please sign up as a student now. </p>
+        <!--
+		<p class="hname6"><strong>Pricing </strong> </p>
         <p class="table">&nbsp;</p>
         <table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
           <tr>
@@ -96,15 +95,17 @@ function DoMenu(emid){
         <p class="abstract2">Discounts: If a customer submits more than 1 essay:<br />
           On the second essay, he/she gets 10% off the original price.<br />
           On the third essay, he/she  gets 15% off the original price. </p>
+		  -->
         <p class="hname4">&nbsp; </p>
         <h2 class="hname4">2.	Comprehensive Essay Consultation and Editing </h2>
         <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;Our editors will help build your essay from the beginning, working with you to brainstorm ideas and choose a topic. They will then assist you in writing and organizing your essay, providing advice on the structure and flow of the composition. Finally, they will help polish your essay for grammar and spelling mistakes, making it ready for submission. </p>
         <p class="hname6"><strong>Features</strong> </p>
         <p class="hname1">•	An editor will work with you on your essay from the beginning to the end, ensuring that your essay is the best that it can be.</p>
-        <p class="textcontect">•	Email contact and two phone conversations with the editor to discuss the progress of your essay. </p>
+        <p class="hname1">•	Email contact and two phone conversations with the editor to discuss the progress of your essay. </p>
         <p class="hname1"> •	Total time = Anywhere from 2 weeks to 2 months, depending on the student's progress on the essay. Editors will return revised essays within 2 days. </p>
-        <p class="hname1">•	For more information about this package, click here(hyperlink to the page &quot;steps_times.doc). </p>
-        <p class="hname6"><strong>Pricing </strong> </p>
+        <p class="hname1">•	For more information about this package, please sign up as a student now.</p>
+        <!--
+		<p class="hname6"><strong>Pricing </strong> </p>
         <p class="table">&nbsp;</p>
         <table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
           <tr>
@@ -129,6 +130,7 @@ function DoMenu(emid){
         <p class="abstract2">Discounts: If a customer submits more than 1 essay. <br />
           On the second essay, he/she gets 10% off the original price.<br />
           On the third essay, he/she  gets 15% off the original price. </p>
+		  -->
       </div>
     </div>
   </div>

@@ -1,7 +1,8 @@
 <?php
  // left side manu for student login
  function display_student_side_menu() {
-    echo '<li><a href="studentoverview.php">Overview</a></li>';
+    echo '<li><a href="studentoverview.php">Instruction</a></li>';
+	echo '<li><a href="pricing.php">Pricing</a></li>';
     echo '<li><a href="studentprofile.php">Profile</a></li>';
     echo '<li><a href="submitessay1.php">Submit New Essay</a></li>';
     echo '<li><a href="myessays.php">My Essays</a></li>';
