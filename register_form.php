@@ -43,40 +43,49 @@
 			
 			//register a user
 			if(mysqli_num_rows($data)==0){
-				$queryinsert = "insert into users(user_type,first_name,last_name,password,email_address,phone_number,create_datetime)values('$usertype','$firstname','$lastname',SHA('$password'),'$email','$phonenumber',NOW())"; 
-				mysqli_query($dbc,$queryinsert)or die("Query Error !");
-				
-				$data2 = mysqli_query($dbc,$querysearch);
-						
-				$row = mysqli_fetch_array($data2);
-				
-				mysqli_close($dbc);
-				
-				// register session variables		
-				 $_SESSION['user_id'] = $row['uid'];
-				 $_SESSION['usertype'] = $row['user_type'];
-				 $_SESSION['firstname'] = $row['first_name'];
-				 $_SESSION['email'] = $row['email_address'];
-				 $_SESSION['phone'] = $row['phone_number'];
-				 
-				// TBD: not sure we need this
-				// setcookie('user_id', $row['uid'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
-				 //setcookie('firstname', $row['first_name'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
-				 //setcookie('usertype', $row['user_type'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
-				
-				// Email notification
-				//$message = "Welcome to our member";
-				// mail( "haoxiemanu@gmail.com ","Welcome ",$message,"From:haoxiemanu@gmail\nReply-To:haoxiemanu@gmail.com\nX-Mailer:PHP/".  phpversion()); 
-				
-				// provode link to the student/editor page
-				//echo "<p>Your new account has been successfully created !</p>";
 			
-				// redirect to the editor's home page
-				if ($usertype == "teacher") {
-					header ('Location:editoroverview.php') ; 
+				if ($usertype == 'student') {
+					$queryinsert = "insert into users(user_type,first_name,last_name,password,email_address,phone_number,create_datetime)values('$usertype','$firstname','$lastname',SHA('$password'),'$email','$phonenumber',NOW())"; 
+					mysqli_query($dbc,$queryinsert)or die("Query Error !");
+					
+					$data2 = mysqli_query($dbc,$querysearch);
+							
+					$row = mysqli_fetch_array($data2);
+					
+					mysqli_close($dbc);
+					
+					// register session variables		
+					 $_SESSION['user_id'] = $row['uid'];
+					 $_SESSION['usertype'] = $row['user_type'];
+					 $_SESSION['firstname'] = $row['first_name'];
+					 $_SESSION['email'] = $row['email_address'];
+					 $_SESSION['phone'] = $row['phone_number'];
+					 
+					// TBD: not sure we need this
+					// setcookie('user_id', $row['uid'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
+					 //setcookie('firstname', $row['first_name'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
+					 //setcookie('usertype', $row['user_type'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
+					
+					// Email notification
+					//$message = "Welcome to our member";
+					// mail( "haoxiemanu@gmail.com ","Welcome ",$message,"From:haoxiemanu@gmail\nReply-To:haoxiemanu@gmail.com\nX-Mailer:PHP/".  phpversion()); 
+					
+					// provode link to the student/editor page
+					//echo "<p>Your new account has been successfully created !</p>";
+				
+					// redirect to the student's home page
+					header('Location:studentoverview.php') ; 
 				}
-				else {
-					header ('Location:studentoverview.php') ; 
+				// go to the editor contract page
+				else if ($usertype == "teacher") {
+					// register the user inputs
+					 $_SESSION['firstname'] = $firstname;
+					 $_SESSION['lastname'] = $lastname;
+					 $_SESSION['password'] = $password;
+					 $_SESSION['email'] = $email;
+					 $_SESSION['phonenumber'] = $phonenumber;
+					 
+					 header('Location:editorcontract.php');		
 				}
 			}
 			else {

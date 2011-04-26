@@ -166,11 +166,17 @@ a:hover {
 #maincontect {
 	width: 955px;
 
+
  background: #FFF height: 100%;
-	border-right: 1px solid #E9E9E9;
-	border-left: 1px solid #E9E9E9;
 	margin-right: auto;
 	margin-left: auto;
+	height: auto;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #E9E9E9;
+	border-left-color: #E9E9E9;
 }
 /*main*/
 #mainCurE {
@@ -540,6 +546,23 @@ a:hover {
 	display: block;
 	font-weight: bold;
 }
+.hname14 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	color: #000;
+	text-indent: 2em;
+}
+.hname15 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #000;
+	text-indent: 2em;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+
 
 
 .hname2 {
@@ -1521,4 +1544,90 @@ a:hover {
 #showlink a:hover {
 	color: #009;
 	text-decoration: underline;
+}
+#EContact {
+	height: auto;
+	width: 900px;
+	float: left;
+	margin-left: 30px;
+}
+#Econtacttitle {
+	text-align: center;
+	height: 50px;
+}
+#EContacttext {
+	font-size: 14px;
+	line-height: 20px;
+	color: #000;
+	height: 20px;
+	width: 750px;
+	float: left;
+}
+#EContacttext a:link {
+	font-size: 14px;
+	color: #F00;
+}
+#EContacttext a:hover {
+	font-size: 14px;
+	color: #F00;
+}
+
+#EContacttext2 {
+	font-size: 14px;
+	line-height: normal;
+	color: #000;
+	height: auto;
+	width: 780px;
+	float: left;
+	border: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+#EContacttext3 {
+	font-size: 14px;
+	line-height: normal;
+	color: #000;
+	height: auto;
+	width: 700px;
+	float: left;
+}
+
+
+#econtactcontent {
+	float: left;
+	height: auto;
+	width: 750px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #CCC;
+	padding: 20px;
+}
+#echeck {
+	width: 30px;
+	float: left;
+	height: 20px;
+	vertical-align: middle;
+	padding-top: 2px;
+	padding-left: 20px;
+}
+
+#econtactcontent a:link {
+	color: #F00;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+}
+#econtactcontent a:hover {
+	color: #F00;
+}
+
+#EContactb {
+	height: auto;
+	width: 500px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	float: left;
+	padding-left: 200px;
 }
