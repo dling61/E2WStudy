@@ -15,14 +15,13 @@
 			$phonenumber = $_SESSION['phonenumber'];
 			
 			$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME)or die('Database Error 2!');
+			$querysearch = "select * from users where email_address='$email'";
+			
 			$queryinsert = "insert into users(user_type,first_name,last_name,password,email_address,phone_number,create_datetime)values('$usertype','$firstname','$lastname',SHA('$password'),'$email','$phonenumber',NOW())"; 
 			mysqli_query($dbc,$queryinsert)or die("Query Error !");
 					
-			$data2 = mysqli_query($dbc,$querysearch);
-							
-			$row = mysqli_fetch_array($data2);
-					
-			mysqli_close($dbc);
+			$data2 = mysqli_query($dbc,$querysearch);				
+			$row = mysqli_fetch_array($data2);	
 					
 			// register session variables		
 			$_SESSION['user_id'] = $row['uid'];
@@ -33,6 +32,8 @@
 			
 			unset($_SESSION['password']);
 			unset($_SESSION['lastname']);
+			
+			mysqli_close($dbc);
 			
 			header('Location:editoroverview.php');
 		}

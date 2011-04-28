@@ -78,6 +78,7 @@ function DoMenu(emid){
 <div class="clearfloat"></div>
 <div id="maincontect">
   <div id="contactitem">
+  <!--
     <li> <p class="hname13">Customer Support</p></li>
     <li>
       <p class="hname5">1-800-393-7550(U.S)</p>
@@ -85,6 +86,7 @@ function DoMenu(emid){
       8:30 AM - 6:00 PM</li>
       
     <li>
+	
       <p class="hname5">021-12345678(China)</p>
       <strong>Beijing Time</strong>: Monday to Friday <BR />
       8:30 AM - 6:00 PM</li>
@@ -93,6 +95,7 @@ function DoMenu(emid){
     </li>
     <li>FACEBOOK </li>
     <li>PRENREN </li>
+	-->
     <li>
       <p class="hname13">Headquarters</p>
     </li>

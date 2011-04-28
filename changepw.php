@@ -127,8 +127,8 @@ function DoMenu(emid){
     <br />
     <div id="loginbuttom2">
       <div id="loginbuttomimg2"><input type="image" src="images/cancel01.gif" name="cancel" width="60" height="24" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" src="images/save01.gif" name="save" width="60" height="24" /></div>
-	</form>
     </div>
+	</form>
     </div>
     <br />
     <br />
