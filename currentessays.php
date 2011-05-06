@@ -54,8 +54,8 @@
 	function display_essay(){
 	    
 		$dbc = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME)or die('Database Error 2!');
-		$query0=$query = "select distinct es.essay_name ename, ss.service_type_id stypeid, es.essay_id eid, ss.service_selection_id ssid, ss.service_status ssstatus ".
-				" from essay es, service_selection ss where ss.essay_id = es.essay_id and service_status = 'assigned' and ss.editor_id = ".$_SESSION['user_id']."";
+		$query0=$query = "select distinct us.last_name lname, us.first_name fname, es.essay_name ename, ss.service_type_id stypeid, es.essay_id eid, ss.service_selection_id ssid, ss.service_status ssstatus ".
+				" from users us, essay es, service_selection ss where us.uid = ss.uid and ss.essay_id = es.essay_id and service_status = 'assigned' and ss.editor_id = ".$_SESSION['user_id']."";
 		$data0 = mysqli_query($dbc,$query0)or die(mysqli_error());
 		$number = 0;
 		// the list of essays
@@ -74,16 +74,24 @@
   ?>
                 <div id="current2">
 				  <div id="current4">
-					<h2 class="hname4"><?php echo "$number" . ". 	Student Name:"; ?><?php echo $row0['ename'];?> Essay Name: <?php echo $row0['ename'];?> Service Name:<?php if ($row0['stypeid'] == 1) echo ' Basic'; else echo ' Comprehensive'; ?> </h2> 
+					<h2 class="hname1"><strong><?php echo "$number" . ". 	Student Name:"; ?>&nbsp;</strong><?php echo $row0['fname']." ".$row0['lname']; ?></h2>
+					<h2 class="hname1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Essay Name:</strong> <?php echo $row0['ename'];?></h2>
+					<h2 class="hname1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Service Name:</strong><?php if ($row0['stypeid'] == 1) echo ' Basic'; else echo ' Comprehensive'; ?> </h2>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;
+					<?php
+					   $studentprofile = STUDENT_PROFILE_URL . "?essid=$eid&eid=" . $_SESSION['user_id']."";
+					   echo "<input type=\"image\" src=\"images/studentprofile.gif\" onclick=\"MM_openBrWindow('" . $studentprofile . "','', 'width=700,height=800')\"></p>";
+					?>
+				    <p>&nbsp;</p>
 				    <div id="Curtable2">
 				    <table width="650" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999" id="showlink"> 
 				    <tr> 
 				      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Version</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Submitted Essay </strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Date Submitted</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9" nowrap><strong>Date Submitted</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Student Comments</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Essay</strong></td>
-                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Edited Date</strong></td>
+                      <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9" nowrap><strong>Edited Date</strong></td>
                       <td align="center" valign="middle" bgcolor="#CCCCCC" class="hname9"><strong>Editor Comments</strong></td>
 				    </tr> 
 			<?php
@@ -101,7 +109,7 @@
 				 <td align="center" valign="middle" bgcolor="#FFFFFF">
 				  <?php 
 						if (!empty($row1["scomment"])) { 
-						  echo '<input type="button" onclick="show_alert(\'' . $row1['scomment'] .'\')" value="See comments" />';
+						  echo '<input type="image" onclick="show_alert(\'' . $row1['scomment'] .'\')" src="images/seecomments.gif" value="See comments" />';
 						}
 				  ?>
 				</td> 
@@ -109,7 +117,7 @@
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php echo $row1["edit_date"];?></td> 
 				<td align="center" valign="middle" bgcolor="#FFFFFF"><?php 
 						if (!empty($row1["ecomment"])) { 
-						  echo '<input type="button" onclick="show_alert(\'' . $row1['ecomment'] .'\')" value="See comments" />';
+						  echo '<input type="image" onclick="show_alert(\'' . $row1['ecomment'] .'\')" src="images/seecomments.gif" value="See comments" />';
 						}
 				  ?>
 				 </td>
@@ -121,10 +129,10 @@
 				</div>
 				</div>
               <div id="current5">
+			    <form name="smform" enctype="multipart/form-data" method="post" action="uploadfile.php">
 				<div id="browseaera3">
 				<p class="hname8" >Upload Revised Essay </p>
                  <div id="browseaera2">
-					<form name="smform" enctype="multipart/form-data" method="post" action="uploadfile.php">
 					<!-- post version ID and essay ID so a file can be inserted into a essay  -->
 					<input type="hidden" name="essayid" value="<?php echo $eid; ?>" />
 					<input type="hidden" name="versionid" value="<?php echo $_SESSION['versionid']; ?>" />
@@ -164,6 +172,10 @@
 function show_alert(msg)
 {
 	alert(msg);
+}
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+  return false;
 }
 </script>
 </head>

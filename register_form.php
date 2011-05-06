@@ -169,7 +169,7 @@
          <div id="signaera"><input type="text" class="signaera"/ name="phonenumber"></div>
       </div> 
     </div>
-    <div id="terms">By Submitting this form,you are agreeing to the <a href="PrivacyTerms.php" color="#039"> terms of service. </a></div>
+    <div id="terms">By Submitting this form,you are agreeing to the <a href="PrivacyTerms.php"> terms of service. </a></div>
     <div id="signbuttomin"><input type="image" value="login" name="submit" src="images/Register.gif" width="105" height="30" /></a></div>
   </div>  
 </form>  

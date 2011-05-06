@@ -78,15 +78,13 @@ function DoMenu(emid){
 <div class="clearfloat"></div>
 <div id="maincontect">
   <div id="contactitem">
-  <!--
     <li> <p class="hname13">Customer Support</p></li>
     <li>
-      <p class="hname5">1-800-393-7550(U.S)</p>
+      <p class="hname5">408-234-0909(U.S)</p>
       <strong>Pacific Time</strong>: Monday to Friday <BR />
       8:30 AM - 6:00 PM</li>
-      
-    <li>
-	
+    </li>
+	<!--
       <p class="hname5">021-12345678(China)</p>
       <strong>Beijing Time</strong>: Monday to Friday <BR />
       8:30 AM - 6:00 PM</li>
@@ -135,10 +133,10 @@ function DoMenu(emid){
             </div>
           </div>
           <div id="loginline3">
-            <div id="loginname"><strong>Comment: &#42</strong></div>
+            <div id="loginname"><strong>Questions: &#42</strong></div>
             <div id="loginput2">
               <p class="aeraborder2">
-                <textarea class="commentarea2" name="comment" id="textarea1" cols="45" rows="5"></textarea>
+                <textarea class="commentarea2" name="comment" id="textarea1" cols="45" rows="10"></textarea>
               </p>
             </div>
           </div>
