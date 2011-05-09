@@ -8,6 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Services Overview</title>
+<meta name="keywords" content="college application essay editing service overview" />
+<meta name="description" content="college application essay editing service package price" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">  
 <!--   
@@ -46,6 +48,7 @@ function DoMenu(emid){
   <div id="leftnav">
     <h1>SERVICES</h1>
     <li><a href="servicesoverview.php">Overview</a></li>
+	<li><a href="serviceprice.php">Pricing</a></li>
   </div>
   <div id="mainSerO">
     <div id="mcontect">
@@ -69,33 +72,6 @@ function DoMenu(emid){
         <p class="hname1">•	 After submission, edited essay will be returned within 2 days.</p>
         <p class="hname1"> •	Total time = Time for Editor(2 days x 2) + the time a student spends on revising essay. </p>
         <p class="hname1">•	For more information about this package, please sign up as a student now. </p>
-        <!--
-		<p class="hname6"><strong>Pricing </strong> </p>
-        <p class="table">&nbsp;</p>
-        <table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
-          <tr>
-            <td align="center" valign="middle" bgcolor="#CCCCCC"><strong>Word  Count</strong></td>
-            <td align="center" valign="middle" bgcolor="#CCCCCC"><strong>Basic-Price</strong></td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">250-450</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$139</td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">451-550</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$159</td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">551-750</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$179</td>
-          </tr>
-        </table>
-        </p>
-        <p class="abstract">&nbsp;</p>
-        <p class="abstract2">Discounts: If a customer submits more than 1 essay:<br />
-          On the second essay, he/she gets 10% off the original price.<br />
-          On the third essay, he/she  gets 15% off the original price. </p>
-		  -->
         <p class="hname4">&nbsp; </p>
         <h2 class="hname4">2.	Comprehensive Essay Consultation and Editing </h2>
         <p class="hname1">&nbsp;&nbsp;&nbsp;&nbsp;Our editors will help build your essay from the beginning, working with you to brainstorm ideas and choose a topic. They will then assist you in writing and organizing your essay, providing advice on the structure and flow of the composition. Finally, they will help polish your essay for grammar and spelling mistakes, making it ready for submission. </p>
@@ -104,33 +80,6 @@ function DoMenu(emid){
         <p class="hname1">•	Email contact and two phone conversations with the editor to discuss the progress of your essay. </p>
         <p class="hname1"> •	Total time = Anywhere from 2 weeks to 2 months, depending on the student's progress on the essay. Editors will return revised essays within 2 days. </p>
         <p class="hname1">•	For more information about this package, please sign up as a student now.</p>
-        <!--
-		<p class="hname6"><strong>Pricing </strong> </p>
-        <p class="table">&nbsp;</p>
-        <table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
-          <tr>
-            <td align="center" valign="middle" bgcolor="#CCCCCC"><strong>Time  Period</strong></td>
-            <td align="center" valign="middle" bgcolor="#CCCCCC"><strong>Comprehensive-Price</strong></td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">7-21  days</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$299</td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">22-36  days</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$399</td>
-          </tr>
-          <tr>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">37-50  days</td>
-            <td align="center" valign="middle" bgcolor="#FFFFFF">$469</td>
-          </tr>
-        </table>
-        </p>
-        <p class="abstract">&nbsp;</p>
-        <p class="abstract2">Discounts: If a customer submits more than 1 essay. <br />
-          On the second essay, he/she gets 10% off the original price.<br />
-          On the third essay, he/she  gets 15% off the original price. </p>
-		  -->
       </div>
     </div>
   </div>
